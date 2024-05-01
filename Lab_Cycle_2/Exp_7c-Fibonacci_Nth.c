@@ -2,7 +2,7 @@
 
 void main()
 {
-	int num,first=0,second=1,fib=1,pos;
+	int num,first=0,second=1,fib=1;
 	printf("Enter N:");
 	scanf("%d",&num);
 	if (num<=0)
