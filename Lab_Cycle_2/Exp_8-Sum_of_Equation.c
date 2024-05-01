@@ -10,7 +10,7 @@ void main()
 	printf("Enter n:");
 	scanf("%d",&n);
 	for(int i=2;i<n;i+=2)
-		sum=sum+(pow(x,i)/i);
-	sum=sum+(pow(x,n)/n);
+		sum+=(pow(x,i)/i);
+	sum+=(pow(x,n)/n);
 	printf("Sum=%f",sum);
 }
