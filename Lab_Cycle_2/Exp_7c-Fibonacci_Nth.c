@@ -5,10 +5,8 @@ void main()
 	int num,first=0,second=1,fib=1;
 	printf("Enter N:");
 	scanf("%d",&num);
-	if (num<=0)
-	{
-		printf("0");
-	}
+	if (num<=0)
+		printf("0");
 	else
 	{
 		while(num>2)
