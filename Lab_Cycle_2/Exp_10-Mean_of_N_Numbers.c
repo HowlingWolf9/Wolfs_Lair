@@ -11,7 +11,7 @@ void main()
 		i++;
 		printf("Enter Number %d:",i);
 		scanf("%d",&num);
-		sum=sum+num;
+		sum+=num;
 		n--;
 	}
 	printf("Mean = %f\n",(sum/i));
