@@ -12,12 +12,8 @@ void main()
 		pal=(pal*10)+rev;
 		temp_num=temp_num/10;
 	}
-	if (pal==num)
-	{
-		printf("It is Palindrome");
-	}
-	else
-	{	
-		printf("NOT Palindrome");
-	}
+	if (pal==num)
+		printf("It is Palindrome");
+	else
+		printf("NOT Palindrome");
 }
