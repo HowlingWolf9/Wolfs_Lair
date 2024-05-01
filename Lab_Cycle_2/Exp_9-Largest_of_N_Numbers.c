@@ -9,10 +9,8 @@ void main()
 	{
 		printf("Enter number %d :",i);
 		scanf("%d",&num);
-		if (num>largest)
-		{
+		if (num>largest)
 			largest=num;
-		}
 		n--;
 		i++;
 	}
