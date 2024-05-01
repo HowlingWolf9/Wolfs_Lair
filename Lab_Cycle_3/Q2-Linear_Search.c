@@ -23,5 +23,4 @@ void main()
 	}
 	if (pos==0)
 		printf("The element does not exist in the given array.");
-}
-	
+}	
