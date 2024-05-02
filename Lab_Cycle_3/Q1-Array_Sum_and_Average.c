@@ -16,3 +16,9 @@ void main()
 		sum+=arr[i];
 	printf("Sum=%f\nAverage=%f",sum,(sum/n));
 }
+/*Algorithm
+Step1: START
+Step2: Take n as input
+Step3: Repeat steps to ,FOR i=0 when i<n
+Step4:  
+*/
