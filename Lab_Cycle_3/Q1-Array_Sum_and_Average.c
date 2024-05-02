@@ -3,7 +3,7 @@
 void main()
 {
 	int n;
-	float sum;
+	float sum=0;
 	printf("Enter No.of Elements:");
 	scanf("%d",&n);
 	int arr[n];
@@ -18,13 +18,14 @@ void main()
 }
 /*Algorithm
 Step1: START
-Step2: Take n as input
-Step3: Repeat steps 4 to 5 ,FOR i=0 when i<n
-Step4: 	Take arr[i] as input
-Step5: 	Increment i by 1
-Step6: Repeat steps 7 to 9 ,FOR i=0 when i<n
-Step7: 	Increment sum by arr[i]
-Step8: 	Increment i by 1
-Step9: Display sum and (sum/n)
-Step10: STOP
+Step2: initialise sum=0
+Step3: Take n as input
+Step4: Repeat steps 4 to 5 ,FOR i=0 when i<n
+Step5: 	Take arr[i] as input
+Step6: 	Increment i by 1
+Step7: Repeat steps 7 to 9 ,FOR i=0 when i<n
+Step8: 	Increment sum by arr[i]
+Step9: 	Increment i by 1
+Step10: Display sum and (sum/n)
+Step11: STOP
 */
