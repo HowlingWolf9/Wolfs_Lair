@@ -32,7 +32,7 @@ Step6: Take elm as input
 Step7: Initialise i=0 and repeat steps 8 to 11, FOR i<n
 Step8: 	IF (elm==arr[i]), then
 Step9: 		Display position
-Step10: 	Set pos=i+1
+Step10:		Set pos=i+1
 Step11:	ENDIF
 Step12: IF (pos==0), then
 Step13:	Display "The element does not exist"
