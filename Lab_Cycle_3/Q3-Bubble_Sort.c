@@ -29,8 +29,8 @@ Step2: Take n as input
 Step3: Initialise i=0 and repeat steps 4 to 5, FOR i<n
 Step4:	Take arr[i] as input
 Step5:	Increment i by 1
-Step6: Initialise i=n-1 and repeat steps to , FOR i>0
-Step7:	Initialise j=0 and repeat steps to , FOR j<i
+Step6: Initialise i=n-1 and repeat steps 7 to 14, FOR i>0
+Step7:	Initialise j=0 and repeat steps 8 to 13, FOR j<i
 Step8:		IF (arr[j]>arr[j+1]), then
 Step9:			Set temp=arr[j]
 Step10:			Set arr[j]=arr[j+1]
