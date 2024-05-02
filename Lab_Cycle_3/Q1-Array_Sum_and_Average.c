@@ -20,5 +20,10 @@ void main()
 Step1: START
 Step2: Take n as input
 Step3: Repeat steps to ,FOR i=0 when i<n
-Step4:  
+Step4:  Take arr[i] as input
+Step5:  Increment i by 1
+Step6: Repeat steps to ,FOR i=0 when i<n
+Step7: Increment sum by arr[i]
+Step8: Display sum and (sum/n)
+Step9: STOP
 */
