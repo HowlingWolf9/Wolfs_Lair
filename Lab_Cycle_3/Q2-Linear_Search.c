@@ -23,4 +23,12 @@ void main()
 	}
 	if (pos==0)
 		printf("The element does not exist in the given array.");
-}	
+}
+/* Algorithm
+Step1: Initialise pos=0
+Step2: Take n as input
+Step3: Repeat steps to , FOR i=0 when i<n
+Step4: 	Take arr[i] as input
+Step5: 	Increment i by 1
+Step6: Take elm as input 
+Step7: 
