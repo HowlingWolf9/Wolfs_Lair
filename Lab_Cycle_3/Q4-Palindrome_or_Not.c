@@ -29,7 +29,7 @@ Step 5: 	Increment len by 1
 Step 6: Initialise i=len and repeat steps 7 to 8, FOR i>0
 Step 7: 	Set rev[len-i] = string[i-1]
 Step 8: 	Decrement i by 1
-Step 9: Initialise i=0 and repeat steps 7 to 8, FOR i<len
+Step 9: Initialise i=0 and repeat steps 10 to 14, FOR i<len
 Step 10: 	IF (rev[i] != string[i])
 Step 11: 		Set cmp=1
 Step 12: 		Display “NOT Palindrome”
