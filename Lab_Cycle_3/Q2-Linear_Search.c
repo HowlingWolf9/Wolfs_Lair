@@ -23,19 +23,19 @@ void main()
 		printf("The element does not exist.");
 }
 /* Algorithm
-Step1: START
-Step2: Initialise pos=0
-Step3: Take n as input
-Step4: Repeat steps 4 to 5, FOR i=0 when i<n
-Step5: 	Take arr[i] as input
-Step6: 	Increment i by 1
-Step7: Take elm as input 
-Step8: Initialise i=0 and repeat steps 8 to 11, FOR i<n
-Step9: 	IF (elm==arr[i]), then
-Step10: 		Display position
-Step11:		Set pos=i+1
-Step12:	ENDIF
-Step13: IF (pos==0), then
-Step14:	Display "The element does not exist"
-Step15: STOP
+Step 1: START
+Step 2: Initialise pos=0
+Step 3: Take n as input
+Step 4: Repeat steps 4 to 5, FOR i=0 when i<n
+Step 5: 	Take arr[i] as input
+Step 6: 	Increment i by 1
+Step 7: Take elm as input 
+Step 8: Initialise i=0 and repeat steps 8 to 11, FOR i<n
+Step 9: 	IF (elm==arr[i]), then
+Step 10: 		Display position
+Step 11:		Set pos=i+1
+Step 12:	ENDIF
+Step 13: IF (pos==0), then
+Step 14:	Display "The element does not exist"
+Step 15: STOP
 */
