@@ -18,22 +18,22 @@ void main()
 			break;
 		}
 	if (cmp==0)
-		printf("Is Pallindrome");
+		printf("Is Palindrome");
 }
 /*Algorithm
 Step 1: START
-Step 2: Initialise cmp=0, len=0
+Step 2: Initialize cmp=0, len=0
 Step 3: Take string as input
 Step 4: Repeat step 5, WHILE (string[len] != ‘\0’)
 Step 5: 	Increment len by 1
-Step 6: Initialise i=len and repeat steps 7 to 8, FOR i>0
+Step 6: Initialize i=len and repeat steps 7 to 8, FOR i>0
 Step 7: 	Set rev[len-i] = string[i-1]
 Step 8: 	Decrement i by 1
-Step 9: Initialise i=0 and repeat steps 10 to 14, FOR i<len
+Step 9: Initialize i=0 and repeat steps 10 to 14, FOR i<len
 Step 10: 	IF (rev[i] != string[i])
 Step 11: 		Set cmp=1
 Step 12: 		Display “NOT Palindrome”
-Step 13: 		BREAK the loop and goto step 15
+Step 13: 		BREAK the loop and go to step 15
 Step 14:	ENDIF
 Step 15: IF (cmp==0)
 Step 16: 	Display “Is Palindrome”
