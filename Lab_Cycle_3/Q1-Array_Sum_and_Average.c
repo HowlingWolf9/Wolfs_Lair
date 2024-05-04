@@ -17,15 +17,15 @@ void main()
 	printf("Sum=%f\nAverage=%f",sum,(sum/n));
 }
 /*Algorithm
-Step 1: START
-Step 2: Initialize sum=0
-Step 3: Take n as input
-Step 4: Initialize i=0 and repeat steps 4 to 5, FOR i<n
-Step 5: 	Take arr[i] as input
-Step 6: 	Increment i by 1
-Step 7: Initialize i=0 repeat steps 7 to 9, FOR i<n
-Step 8: 	Increment sum by arr[i]
-Step 9: 	Increment i by 1
+Step 01: START
+Step 02: Initialize sum=0
+Step 03: Take n as input
+Step 04: Initialize i=0 and repeat steps 4 to 5, FOR i<n
+Step 05: 	Take arr[i] as input
+Step 06: 	Increment i by 1
+Step 07: Initialize i=0 repeat steps 7 to 9, FOR i<n
+Step 08: 	Increment sum by arr[i]
+Step 09: 	Increment i by 1
 Step 10: Display sum and (sum/n)
 Step 11: STOP
 */
