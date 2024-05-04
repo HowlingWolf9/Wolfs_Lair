@@ -35,5 +35,5 @@ Step 12: Initialize n=0 and repeat steps 10 to 11, FOR i<clen
 Step 13: 	Set combined[i]=str2[n]
 Step 14:	Increment i and n by 1
 Step 15: Display combined
-Step 16: STOP	
+Step 16: STOP
 */
