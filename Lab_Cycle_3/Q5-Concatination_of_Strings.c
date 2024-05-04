@@ -9,9 +9,9 @@ void main()
 	printf("Enter the second string:");
 	scanf("%s",str2);
 	while(str1[len1]!='$')
-			len1++;
+		len1++;
 	while(str2[len2]!='$')
-			len2++;
+		len2++;
 	clen=len1+len2;
 	for (i=0;i<len1;i++)
 		combined[i]=str1[i];
