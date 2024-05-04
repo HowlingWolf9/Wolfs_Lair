@@ -30,7 +30,7 @@ Step 06: Initialize i=len and repeat steps 7 to 8, FOR i>0
 Step 07: 	Set rev[len-i] = string[i-1]
 Step 08: 	Decrement i by 1
 Step 09: Initialize i=0 and repeat steps 10 to 14, FOR i<len
-Step 10: 	IF (rev[i] != string[i])
+Step 10: 	IF (rev[i] != string[i]), then
 Step 11: 		Set cmp=1
 Step 12: 		Display “NOT Palindrome”
 Step 13: 		BREAK the loop and go to step 15
