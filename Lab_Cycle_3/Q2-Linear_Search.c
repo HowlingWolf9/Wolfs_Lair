@@ -1,5 +1,5 @@
 /*
-Experiment: 21
+Experiment: 22
 Date: 01/05/2024
 
 AIM: Write a C program to read n integers, store them in an array and search for an element in the array using an algorithm for Linear Search
