@@ -18,7 +18,7 @@ Step 10: 	IF (rev[i] != string[i]), then
 Step 11: 		Set cmp=1
 Step 12: 		Display “NOT Palindrome”
 Step 13: 		BREAK the loop and go to step 15
-Step 14:	ENDIF
+Step 14: 	ENDIF
 Step 15: IF (cmp==0)
 Step 16: 	Display “Is Palindrome”
 Step 17: ENDIF
