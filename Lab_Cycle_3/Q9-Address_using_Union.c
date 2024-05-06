@@ -21,7 +21,6 @@ Step 14: Display p1.pin
 Step 15: STOP
 */
 //CODE:
-
 #include <stdio.h>
 #include <string.h>
 
