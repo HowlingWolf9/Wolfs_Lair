@@ -15,10 +15,10 @@ Step 07: Take elm as input
 Step 08: Initialize i=0 and repeat steps 8 to 11, FOR i<n
 Step 09: 	IF (elm==arr[i]), then
 Step 10: 		Display position
-Step 11:		Set pos=i+1
-Step 12:	ENDIF
+Step 11: 		Set pos=i+1
+Step 12: 	ENDIF
 Step 13: IF (pos==0), then
-Step 14:	Display "The element does not exist"
+Step 14: 	Display "The element does not exist"
 Step 15: STOP
 */
 //CODE:
