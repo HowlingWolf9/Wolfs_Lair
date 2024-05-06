@@ -1,5 +1,6 @@
 /*
 Experiment: 21
+Date: 16/04/2024
 
 AIM: Write a C program to read n integers, store them in an array and find their sum and average.
 
