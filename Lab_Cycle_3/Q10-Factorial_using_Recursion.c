@@ -3,6 +3,7 @@ Experiment: 30
 Date: 
 
 AIM: Write a C program to find the factorial of a given Natural Number n using recursive function
+
 ALGORITHM:
 Step 01: START
 Step 02: Declare a function fact with return type int and argument (int num)
