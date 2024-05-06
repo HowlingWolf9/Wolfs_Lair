@@ -1,5 +1,6 @@
 /*
 Experiment: 29
+Date: 
 
 AIM: Write a C program, and declare a union containing 5 string variables (Name, House Name, City Name, State and Pincode) each with a length of C_SIZE (user defined constant). Then, read and display the address of a person using a variable of the union.
 
