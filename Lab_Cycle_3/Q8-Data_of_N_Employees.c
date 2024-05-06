@@ -1,5 +1,6 @@
 /*
 Experiment: 28
+Date: 
 
 AIM: Write a C program, and using structure, read and print data of n employees (Name, Employee Id and Salary)
 
@@ -13,7 +14,7 @@ Step 06: 	Take e[i].name, e[i].id and e[i].salary as input
 Step 07: 	Increment i by 1
 Step 08: Initialize i=0 and repeat steps 6 to 7, FOR i<n
 Step 09: 	Display e[i].name, e[i].id and e[i].salary
-Step 10:	Increment i by 1
+Step 10: 	Increment i by 1
 Step 11: STOP
 */
 //CODE:
