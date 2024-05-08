@@ -8,9 +8,9 @@ ALGORITHM:
 Step 01: START
 Step 02: Initialize cmp=0, len=0
 Step 03: Take string as input
-Step 04: Repeat step 5, WHILE (string[len] != ‘\0’)
+Step 04: Repeat step 05, WHILE (string[len] != ‘\0’)
 Step 05: 	Increment len by 1
-Step 06: Initialize i=len and repeat steps 7 to 8, FOR i>0
+Step 06: Initialize i=len and repeat steps 07 to 08, FOR i>0
 Step 07: 	Set rev[len-i] = string[i-1]
 Step 08: 	Decrement i by 1
 Step 09: Initialize i=0 and repeat steps 10 to 14, FOR i<len
@@ -32,12 +32,12 @@ void main()
 	char string[20],rev[20];
 	int cmp=0,len=0;
 	printf("Enter the string:");
-	scanf("%s",&string);
+	scanf("%s",string);
 	while (string[len] != '\0')
 			len++;
 	for (int i = len; i > 0; i--)
 		rev[len-i]=string[i-1];
-	for (int i = 0; i < len; ++i)
+	for (int i = 0; i < len; i++)
 		if (rev[i] != string[i])
 		{
 			cmp=1;
@@ -47,3 +47,11 @@ void main()
 	if (cmp==0)
 		printf("Is Palindrome");
 }
+/*
+OUTPUT:
+Enter the string:Hello
+NOT Palindrome
+
+Enter the string:malayalam
+Is Palindrome
+*/
