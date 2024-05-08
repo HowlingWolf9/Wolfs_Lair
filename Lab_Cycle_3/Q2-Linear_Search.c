@@ -8,7 +8,7 @@ ALGORITHM:
 Step 01: START
 Step 02: Initialize pos=0
 Step 03: Take n as input
-Step 04: Repeat steps 05 to 06, FOR i=0 when i<n
+Step 04: Initialize i=0 and repeat steps 05 to 06, FOR i<n
 Step 05: 	Take arr[i] as input
 Step 06: 	Increment i by 1
 Step 07: Take elm as input 
