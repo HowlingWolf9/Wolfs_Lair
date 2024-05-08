@@ -40,9 +40,21 @@ void main()
 	for (int i=0;i<n;i++)
 		if (elm==arr[i])
 		{
-			printf("The element is in position %d .\n",i+1);
+			printf("The element is in position %d.\n",i+1);
 			pos=i+1;
 		}
 	if (pos==0)
 		printf("The element does not exist.");
 }
+/*
+OUTPUT:
+Enter No.of Elements:5
+Enter Number 1 :1
+Enter Number 2 :9
+Enter Number 3 :1
+Enter Number 4 :7
+Enter Number 5 :3
+Enter the element to search for :1
+The element is in position 1.
+The element is in position 3.
+*/
