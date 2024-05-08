@@ -23,14 +23,12 @@ Step 15: STOP
 */
 //CODE:
 #include <stdio.h>
-#include <string.h>
 
 #define C_SIZE 50
 
 union address
 {
-	char name[C_SIZE],house[C_SIZE],city[C_SIZE],state[C_SIZE];
-	int pin;
+	char name[C_SIZE],house[C_SIZE],city[C_SIZE],state[C_SIZE],pin[C_SIZE];
 };
 
 void main()
@@ -49,8 +47,8 @@ void main()
 	scanf("%s",p1.state);
 	printf("State: %s\n",p1.state);
 	printf("Enter Pincode: ");
-	scanf("%d",&p1.pin);
-	printf("Pincode: %d\n",p1.pin);
+	scanf("%s",p1.pin);
+	printf("Pincode: %s\n",p1.pin);
 }
 /*
 OUTPUT:
