@@ -19,7 +19,8 @@ Step 11: 		Display pos
 Step 12: 	ENDIF
 Step 13: IF (pos==0), then
 Step 14: 	Display "The element does not exist"
-Step 15: STOP
+Step 15: ENDIF
+Step 16: STOP
 */
 //CODE:
 #include <stdio.h>
