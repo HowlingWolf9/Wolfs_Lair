@@ -7,11 +7,11 @@ AIM: Write a C program to read n integers, store them in an array and sort the e
 ALGORITHM:
 Step 01: START
 Step 02: Take n as input
-Step 03: Initialize i=0 and repeat steps 4 to 5, FOR i<n
+Step 03: Initialize i=0 and repeat steps 04 to 05, FOR i<n
 Step 04: 	Take arr[i] as input
 Step 05: 	Increment i by 1
-Step 06: Initialize i=n-1 and repeat steps 7 to 14, FOR i>0
-Step 07: 	Initialize j=0 and repeat steps 8 to 13, FOR j<i
+Step 06: Initialize i=n-1 and repeat steps 07 to 14, FOR i>0
+Step 07: 	Initialize j=0 and repeat steps 08 to 13, FOR j<i
 Step 08: 		IF (arr[j]>arr[j+1]), then
 Step 09: 			Set temp=arr[j]
 Step 10: 			Set arr[j]=arr[j+1]
@@ -51,3 +51,14 @@ void main()
 	for (int i=0;i<n;i++)
 		printf("%d ",arr[i]);
 }
+/*
+OUTPUT:
+Enter No.of Elements:5
+Enter Number 1 :1
+Enter Number 2 :8
+Enter Number 3 :5
+Enter Number 4 :4
+Enter Number 5 :2
+
+Sorted Array: 1 2 4 5 8
+*/
