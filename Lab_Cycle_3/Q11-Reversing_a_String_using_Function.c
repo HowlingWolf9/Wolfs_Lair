@@ -33,7 +33,8 @@ char *strrev(char *string)
 		rev[len2-len1]=string[len1-1];
 		len1--;
 	}
-	string=rev;
+	for (int i = 0; i < len2; i++)
+		string[i]=rev[i];
 	return string;
 }
 
