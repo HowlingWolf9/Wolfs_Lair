@@ -8,11 +8,11 @@ ALGORITHM:
 Step 01: START
 Step 02: Initialize pos=0
 Step 03: Take n as input
-Step 04: Repeat steps 4 to 5, FOR i=0 when i<n
+Step 04: Repeat steps 05 to 06, FOR i=0 when i<n
 Step 05: 	Take arr[i] as input
 Step 06: 	Increment i by 1
 Step 07: Take elm as input 
-Step 08: Initialize i=0 and repeat steps 8 to 11, FOR i<n
+Step 08: Initialize i=0 and repeat steps 09 to 12, FOR i<n
 Step 09: 	IF (elm==arr[i]), then
 Step 10: 		Display position
 Step 11: 		Set pos=i+1
