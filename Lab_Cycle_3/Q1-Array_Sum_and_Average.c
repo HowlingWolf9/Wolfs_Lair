@@ -8,10 +8,10 @@ ALGORITHM:
 Step 01: START
 Step 02: Initialize sum=0
 Step 03: Take n as input
-Step 04: Initialize i=0 and repeat steps 4 to 5, FOR i<n
+Step 04: Initialize i=0 and repeat steps 05 to 06, FOR i<n
 Step 05: 	Take arr[i] as input
 Step 06: 	Increment i by 1
-Step 07: Initialize i=0 repeat steps 7 to 9, FOR i<n
+Step 07: Initialize i=0 and repeat steps 08 to 09, FOR i<n
 Step 08: 	Increment sum by arr[i]
 Step 09: 	Increment i by 1
 Step 10: Display sum and (sum/n)
