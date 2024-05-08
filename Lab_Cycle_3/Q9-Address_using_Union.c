@@ -52,3 +52,16 @@ void main()
 	scanf("%d",&p1.pin);
 	printf("Pincode: %d\n",p1.pin);
 }
+/*
+OUTPUT:
+Enter Name: Philip
+Name: Philip
+Enter House Name: Pariyaram_House
+House Name: Pariyaram_House
+Enter City Name: Kannur
+City: Kannur
+Enter State: Kerala
+State: Kerala
+Enter Pincode: 670001
+Pincode: 67000
+*/
