@@ -8,15 +8,15 @@ ALGORITHM:
 Step 01: START
 Step 02: Initialize len1=0, len2=0
 Step 03: Take str1 and str2 as input
-Step 04: Repeat step 5, WHILE (str1[len1] != ‘$’)
+Step 04: Repeat step 05, WHILE (str1[len1] != ‘$’)
 Step 05: 	Increment len1 by 1
-Step 06: Repeat step 7, WHILE (str2[len2] != ‘$’)
+Step 06: Repeat step 07, WHILE (str2[len2] != ‘$’)
 Step 07: 	Increment len2 by 1
 Step 08: Set clen=len1+len2
 Step 09: Initialize i=0 and repeat steps 10 to 11, FOR i<len1
 Step 10: 	Set combined[i]=str1[i]
 Step 11: 	Increment i by 1
-Step 12: Initialize n=0 and repeat steps 10 to 11, FOR i<clen
+Step 12: Initialize n=0 and repeat steps 13 to 14, FOR i<clen
 Step 13: 	Set combined[i]=str2[n]
 Step 14: 	Increment i and n by 1
 Step 15: Display combined
@@ -27,7 +27,7 @@ Step 16: STOP
 
 void main()
 {
-	char str1[50],str2[50],combined[100]={};
+	char str1[50],str2[50],combined[100];
 	int i,n,len1=0,len2=0,clen;
 	printf("Enter the first string:");
 	scanf("%s",str1);
@@ -44,3 +44,9 @@ void main()
 		combined[i]=str2[n];
 	printf("%s",combined);
 }
+/*
+OUTPUT:
+Enter the first string:Con$
+Enter the second string:catenate$
+Concatenate
+*/
