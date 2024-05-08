@@ -9,10 +9,10 @@ Step 01: START
 Step 02: Declare a structure named employee with id, salary and name as variables
 Step 03: Take n as input
 Step 04: Declare variables e[n] of type struct employee 
-Step 05: Initialize i=0 and repeat steps 6 to 7, FOR i<n
+Step 05: Initialize i=0 and repeat steps 06 to 07, FOR i<n
 Step 06: 	Take e[i].name, e[i].id and e[i].salary as input
 Step 07: 	Increment i by 1
-Step 08: Initialize i=0 and repeat steps 6 to 7, FOR i<n
+Step 08: Initialize i=0 and repeat steps 09 to 10, FOR i<n
 Step 09: 	Display e[i].name, e[i].id and e[i].salary
 Step 10: 	Increment i by 1
 Step 11: STOP
@@ -44,9 +44,7 @@ void main()
 	}
 	printf("\nNo.\tName\tId\tSalary\n---\t----\t--\t------\n");
 	for (int i=0;i<n;i++)
-	{
 		printf("%d\t%s\t%d\t%d\n",i+1,e[i].name,e[i].id,e[i].salary);
-	}
 }
 /*
 Enter No.of Employees :3
