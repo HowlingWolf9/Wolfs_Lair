@@ -29,17 +29,17 @@ struct employee
 void main()
 {
 	int n;
-	printf("Enter No.of Employees :");
+	printf("Enter No.of Employees: ");
 	scanf("%d",&n);
 	struct employee e[n];
 	for (int i=0;i<n;i++)
 	{
 		printf("\nEmployee No.%d\n---------------\n",i+1);
-		printf("Enter Name :");
+		printf("Enter Name: ");
 		scanf("%s",e[i].name);
-		printf("Enter Id :");
+		printf("Enter Id: ");
 		scanf("%d",&e[i].id);
-		printf("Enter Salary :");
+		printf("Enter Salary: ");
 		scanf("%d",&e[i].salary);
 	}
 	printf("\nNo.\tName\tId\tSalary\n---\t----\t--\t------\n");
@@ -48,3 +48,30 @@ void main()
 		printf("%d\t%s\t%d\t%d\n",i+1,e[i].name,e[i].id,e[i].salary);
 	}
 }
+/*
+Enter No.of Employees :3
+
+Employee No.1
+---------------
+Enter Name: Philip
+Enter Id: 161189
+Enter Salary: 60000
+
+Employee No.2
+---------------
+Enter Name: Suresh
+Enter Id: 166969
+Enter Salary: 100000
+
+Employee No.3
+---------------
+Enter Name: Mathayi
+Enter Id: 161149
+Enter Salary: 75000
+
+No.     Name    Id      Salary
+---     ----    --      ------
+1       Philip  161189  60000
+2       Suresh  166969  100000
+3       Mathayi 161149  75000
+*/
