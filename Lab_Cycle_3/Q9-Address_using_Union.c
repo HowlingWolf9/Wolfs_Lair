@@ -36,7 +36,6 @@ union address
 void main()
 {
 	union address p1;
-	char addr[100];
 	printf("Enter Name: ");
 	scanf("%s",p1.name);
 	printf("Name: %s\n",p1.name);
