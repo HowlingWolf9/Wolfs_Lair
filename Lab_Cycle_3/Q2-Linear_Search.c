@@ -14,8 +14,8 @@ Step 06: 	Increment i by 1
 Step 07: Take elm as input 
 Step 08: Initialize i=0 and repeat steps 09 to 12, FOR i<n
 Step 09: 	IF (elm==arr[i]), then
-Step 10: 		Display position
-Step 11: 		Set pos=i+1
+Step 10: 		Set pos=i+1
+Step 11: 		Display pos
 Step 12: 	ENDIF
 Step 13: IF (pos==0), then
 Step 14: 	Display "The element does not exist"
@@ -40,8 +40,8 @@ void main()
 	for (int i=0;i<n;i++)
 		if (elm==arr[i])
 		{
-			printf("The element is in position %d.\n",i+1);
 			pos=i+1;
+			printf("The element is in position %d.\n",pos);
 		}
 	if (pos==0)
 		printf("The element does not exist.");
