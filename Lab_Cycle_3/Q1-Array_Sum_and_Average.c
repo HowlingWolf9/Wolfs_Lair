@@ -36,3 +36,14 @@ void main()
 		sum+=arr[i];
 	printf("Sum=%f\nAverage=%f",sum,(sum/n));
 }
+/*
+OUTPUT:
+Enter No.of Elements:5
+Enter Number 1 :1
+Enter Number 2 :8
+Enter Number 3 :3
+Enter Number 4 :4
+Enter Number 5 :6
+Sum=22.000000
+Average=4.400000
+*/
