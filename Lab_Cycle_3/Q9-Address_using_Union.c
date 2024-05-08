@@ -63,5 +63,5 @@ City: Kannur
 Enter State: Kerala
 State: Kerala
 Enter Pincode: 670001
-Pincode: 67000
+Pincode: 670001
 */
