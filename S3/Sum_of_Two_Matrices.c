@@ -46,6 +46,7 @@ Enter Matrix 2:
 6 5 4
 3 2 1
 
+Sum of Matrices:
 [       10      10      10      ]
 [       10      10      10      ]
 [       10      10      10      ]
