@@ -1,3 +1,15 @@
+/*
+AIM: Write a C program to print the sum of diagonal elements of a matrix
+
+ALGORITHM:
+Step 01: START
+Step 02: Initialize 3 matrices
+Step 03: Input matrix elements to first two matrices
+Step 04: Calculate the sum of respective elements of first two matrices and assign them to the thirds matrice in the respective positions
+Step 05: Display the third array
+Step 06: STOP
+*/
+//CODE:
 #include <stdio.h>
 
 void main()
@@ -14,7 +26,7 @@ void main()
 	for (int i=0;i<3;i++)
 		for (int j=0;j<3;j++)
 			smat[i][j]=mat1[i][j]+mat2[i][j];
-	printf("\n");
+	printf("\nSum of Matrices:\n");
 	for (int i=0;i<3;i++)
 	{
 		printf("[\t");
@@ -23,3 +35,18 @@ void main()
 		printf("]\n");
 	}
 }
+/*
+OUTPUT:
+Enter Matrix 1:
+1 2 3
+4 5 6
+7 8 9
+Enter Matrix 2:
+9 8 7
+6 5 4
+3 2 1
+
+[       10      10      10      ]
+[       10      10      10      ]
+[       10      10      10      ]
+*/
