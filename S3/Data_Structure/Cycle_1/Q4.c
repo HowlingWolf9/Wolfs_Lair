@@ -8,26 +8,26 @@ void push(int *stack, int size, int *top)
 		(*top)++;
 	}
 	else
-		printf("Limit Exceeded");
+		printf("Limit Exceeded\n");
 }
-void pop(int *stack, int size, int* top)
+void pop(int *stack, int *top)
 {
-	if ((*top)>=0)
+	if ((*top)>0)
 	{
 		stack[*top]='\0';
 		(*top)--;
 	}
 	else
-		printf("Stack is empty");
+		printf("Stack is empty\n");
 }
 void display(int *stack, int* top)
 {
 
-	if ((*top)>=0)
+	if ((*top)>0)
 		for(int i=(*top-1);i>=0;i--)
-			printf("[%d]\n",stack[i]);
+			printf("[\t%d\t]\n",stack[i]);
 	else
-		printf("Stack is empty");
+		printf("Stack is empty\n");
 }
 int main()
 {
@@ -37,7 +37,6 @@ int main()
 	int stack[size];
 	while (1)
 	{
-		printf("top=%d",top);
 		printf("\n1.PUSH\n2.POP\n3.DISPLAY\n4.EXIT\nSelect the option:");
 		scanf("%d",&opt);
 		switch(opt)
@@ -46,7 +45,7 @@ int main()
 				push(stack,size,&top);
 				break;
 			case 2:
-				pop(stack,size,&top);
+				pop(stack,&top);
 				break;
 			case 3:
 				display(stack,&top);
