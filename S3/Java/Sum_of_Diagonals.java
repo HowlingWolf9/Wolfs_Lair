@@ -15,5 +15,5 @@ class Sum_of_Diagonals
     for ( int i=0 ; i<dim ; i++ )
         sum+=mat[i][i];
     System.out.println("Sum="+sum);
-    }
+		}
 }
