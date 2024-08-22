@@ -7,7 +7,7 @@ class Sum_of_Diagonals
     System.out.println("Enter the size of the Matrix:");
     int dim= scan.nextInt();
     int mat[][]=new int[dim][dim];
-    System.out.println("Enter the Elements of Matrix 1:");
+    System.out.println("Enter the Elements of Matrix:");
     for ( int i=0 ; i<dim ; i++ )
       for ( int j=0 ; j<dim ; j++ )
         mat[i][j]=scan.nextInt();
