@@ -4,9 +4,9 @@ class Matrix_Multiplication
   public static void main(String[] args)
   {
     Scanner scan = new Scanner(System.in);
-    System.out.println("Enter the number of Rows of Matrix 1:");
+    System.out.println("Enter the No. of Rows of Matrix 1:");
     int row1= scan.nextInt();
-    System.out.println("Enter the number of Columns of Matrix 1:");
+    System.out.println("Enter the No. of Columns of Matrix 1:");
     int col1=scan.nextInt();
     int mat1[][]=new int[row1][col1];
     System.out.println("Enter the Elements of Matrix 1:");
