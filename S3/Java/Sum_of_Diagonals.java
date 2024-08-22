@@ -13,7 +13,7 @@ class Sum_of_Diagonals
         mat[i][j]=scan.nextInt();
     int sum=0;
     for ( int i=0 ; i<dim ; i++ )
-        sum+=mat[i][i];
+      sum+=mat[i][i];
     System.out.println("Sum="+sum);
 	}
 }
