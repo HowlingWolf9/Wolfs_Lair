@@ -2,7 +2,7 @@ import java.util.Scanner;
 class Sum_of_Diagonals
 {
   public static void main(String[] args)
-		{
+	{
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter the size of the Matrix:");
     int dim= scan.nextInt();
@@ -15,5 +15,5 @@ class Sum_of_Diagonals
     for ( int i=0 ; i<dim ; i++ )
         sum+=mat[i][i];
     System.out.println("Sum="+sum);
-		}
+	}
 }
