@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.io.*;
 class add_user
 {
 	public static void main(String args[])
