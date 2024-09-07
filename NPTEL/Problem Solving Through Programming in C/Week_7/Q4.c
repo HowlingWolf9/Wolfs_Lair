@@ -8,3 +8,7 @@ int main()
     printf("n1 = %d, n2 = %d", n1, n2);
     return 0;
 }
+/*
+OUTPUT:
+n1 = 18, n2 = 17
+*/
