@@ -14,3 +14,7 @@ int main()
     printf("%s", p);
     return 0;
 }
+/*
+OUTPUT:
+
+*/
