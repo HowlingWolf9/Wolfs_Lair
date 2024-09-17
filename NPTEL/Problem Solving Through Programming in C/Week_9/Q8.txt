@@ -1,0 +1,55 @@
+a)  int min;
+        for (int j = 0; j < arr.length - 1; j++)
+        {
+            min = j;
+            for (int k = j + 1; k <= arr.length - 1; k++)
+            {
+                if (arr[k] < arr[min])
+                    min = k;
+            }
+            int temp = arr[min];
+            arr[min] = arr[j];
+            arr[j] = temp;
+        }
+
+b)  int min;
+        for (int j = 0; j < arr.length - 1; j++)
+        {
+            min = j;
+            for (int k = j + 1; k <= arr.length; k++)
+            {
+                if (arr[k] < arr[min])
+                    min = k;
+            }
+            int temp = arr[min];
+            arr[min] = arr[j];
+            arr[j] = temp;
+        }
+
+c) int min;
+        for (int j = 0; j < arr.length - 1; j++)
+        {
+            min = j;
+            for (int k = j + 1; k <= arr.length - 1; k++)
+            {
+                if (arr[k] > arr[min])
+                    min = k;
+            }
+            int temp = arr[min];
+            arr[min] = arr[j];
+            arr[j] = temp;
+        }
+
+d)  int min;
+        for (int j = 0; j < arr.length - 1; j++)
+        {
+            min = j;
+            for (int k = j + 1; k <= arr.length; k++)
+            {
+                if (arr[k] > arr[min])
+                    min = k;
+            }
+            int temp = arr[min];
+            arr[min] = arr[j];
+            arr[j] = temp;
+        }
