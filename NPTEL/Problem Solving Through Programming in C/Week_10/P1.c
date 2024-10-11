@@ -13,11 +13,8 @@ printf("The given matrix is not invertible");
 printf("The given matrix is invertible"); 
 */
 	determinant = a[0][0]*((a[1][1]*a[2][2])-(a[1][2]*a[2][1]));
-    printf("%ld\n", determinant);
 	determinant -= a[0][1]*((a[1][0]*a[2][2])-(a[2][0]*a[1][2]));
-    printf("%ld\n", determinant);
 	determinant += a[0][2]*((a[1][0]*a[2][1])-(a[2][0]*a[1][1]));
-    printf("%ld\n", determinant);
 	if (determinant == 0)
       printf("The given matrix is not invertible");
 	else
