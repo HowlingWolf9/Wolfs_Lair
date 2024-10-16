@@ -102,3 +102,19 @@ public class StudentInfoGUI {
         });
     }
 }
+
+/*
+ALGORITHM: StudentInfoGUI
+1. Create a new JFrame
+2. Create labels and text fields
+3. Create checkboxes
+4. Create buttons
+5. Add labels, text fields, checkboxes and buttons to the frame
+6. Add item listener to checkboxes
+    - If the checkbox is selected, unselect the other checkbox
+7. Add action listener to buttons
+    - Get the values from the text fields and checkboxes
+    - Print the values to the console
+    - Clear the text fields and checkboxes
+ 8. Set the frame size and make it visible
+ */
