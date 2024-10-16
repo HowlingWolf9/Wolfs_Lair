@@ -106,6 +106,7 @@ public class StudentInfoGUI {
 /*
 ALGORITHM: StudentInfoGUI
 1. Create a new JFrame
+    - Add "Student Information" to the title
 2. Create labels and text fields
     - Add "Name:", "Branch:", "Batch:" to the labels and text fields
 3. Create checkboxes
