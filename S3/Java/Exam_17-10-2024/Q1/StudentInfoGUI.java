@@ -113,8 +113,11 @@ ALGORITHM: StudentInfoGUI
 6. Add item listener to checkboxes
     - If the checkbox is selected, unselect the other checkbox
 7. Add action listener to buttons
-    - Get the values from the text fields and checkboxes
-    - Print the values to the console
-    - Clear the text fields and checkboxes
+    - When the save button is clicked
+        - Get the values from the text fields and checkboxes
+        - Print the values to the console
+        - Clear the text fields and checkboxes
+    - When the cancel button is clicked
+        - Clear the text fields and checkboxes
  8. Set the frame size and make it visible
  */
