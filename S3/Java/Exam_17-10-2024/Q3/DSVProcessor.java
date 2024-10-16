@@ -52,5 +52,6 @@ OUTPUT: op-roll.txt
 3. Split the line into id, value1, value2, value3 using ":" as the delimiter
 4. Calculate the sum of value1, value2, value3
 5. Store the id and the sum in a list
-6. Write the list to the output file in the format of id:sum
- */
+6. If the id is already present in the list, add the sum to the existing value
+7. Write the list to the output file in the format of id:sum
+*/
