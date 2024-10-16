@@ -85,3 +85,23 @@ public class StudentInfoGUI {
         });
     }
 }
+
+/*
+ALGORITHM: StudentInfoGUI
+1. Create a new JFrame
+    - Add "Student Information" to the title
+2. Create labels and text fields
+    - Add "name", "class", "roll", "mobile" and "LBS College of Engineering" to the labels
+    - Add appropriate text fields to the labels "name", "class", "roll", "mobile"
+3. Create buttons
+    - Add "Register", "Clear" and "Ask" to the buttons
+4. Add labels, text fields and buttons to the frame
+5. Add action listener to buttons
+    - When the "Register" button is clicked
+        - Get the values from the text fields
+        - Print the values to the console
+        - Clear the text fields
+    - When the "Clear" button is clicked
+        - Clear the text fields
+    - When the "Ask" button is clicked
+*/
