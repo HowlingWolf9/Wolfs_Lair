@@ -110,14 +110,14 @@ ALGORITHM: StudentInfoGUI
 3. Create checkboxes
 4. Create buttons
 5. Add labels, text fields, checkboxes and buttons to the frame
-6. Add item listener to checkboxes
+6. Set the frame size and make it visible
+7. Add item listener to checkboxes
     - If the checkbox is selected, unselect the other checkbox
-7. Add action listener to buttons
+8. Add action listener to buttons
     - When the save button is clicked
         - Get the values from the text fields and checkboxes
         - Print the values to the console
         - Clear the text fields and checkboxes
     - When the cancel button is clicked
         - Clear the text fields and checkboxes
- 8. Set the frame size and make it visible
  */
