@@ -39,3 +39,18 @@ public class DSVProcessor {
         }
     }
 }
+
+/*
+ALGORITHM: DSVProcessor
+INPUT: data-roll.txt
+OUTPUT: op-roll.txt
+
+1. Read the textfile in which the id and its valaues are stored
+2. Lines are in the format of id:value1:value2:value3
+    KSD23:20:30:40  
+    KSD45:10:10:10
+3. Split the line into id, value1, value2, value3 using ":" as the delimiter
+4. Calculate the sum of value1, value2, value3
+5. Store the id and the sum in a list
+6. Write the list to the output file in the format of id:sum
+ */
