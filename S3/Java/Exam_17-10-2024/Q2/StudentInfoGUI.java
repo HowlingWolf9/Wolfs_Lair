@@ -96,7 +96,8 @@ ALGORITHM: StudentInfoGUI
 3. Create buttons
     - Add "Register", "Clear" and "Ask" to the buttons
 4. Add labels, text fields and buttons to the frame
-5. Add action listener to buttons
+5. Set the frame size and make it visible
+6. Add action listener to buttons
     - When the "Register" button is clicked
         - Get the values from the text fields
         - Print the values to the console
