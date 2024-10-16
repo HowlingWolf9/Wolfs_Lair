@@ -107,12 +107,15 @@ public class StudentInfoGUI {
 ALGORITHM: StudentInfoGUI
 1. Create a new JFrame
 2. Create labels and text fields
+    - Add "Name:", "Branch:", "Batch:" to the labels and text fields
 3. Create checkboxes
+    - Add "Kasargod" and "Kannur" to the checkbox
 4. Create buttons
+    - Add "Save" and "Cancel" to the buttons
 5. Add labels, text fields, checkboxes and buttons to the frame
 6. Set the frame size and make it visible
 7. Add item listener to checkboxes
-    - If the checkbox is selected, unselect the other checkbox
+    - If one checkbox is selected, unselect the other checkbox
 8. Add action listener to buttons
     - When the save button is clicked
         - Get the values from the text fields and checkboxes
