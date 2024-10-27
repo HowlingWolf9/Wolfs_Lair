@@ -55,7 +55,7 @@ void readPoly(struct poly *p)
 {
     for (int i = p->exp; i >= 0; i--)
     {
-        printf("Enter the coefficent of the x^%d : ", i);
+        printf("Enter the coefficient of the x^%d: ", i);
         scanf("%d", &p->coeff[i]);
     }
 }
@@ -104,17 +104,17 @@ void main()
 /*
 OUTPUT:
 Enter the highest degree of the first polynomial: 3
-Enter the coefficent of the x^3 : 2
-Enter the coefficent of the x^2 : 3
-Enter the coefficent of the x^1 : 1
-Enter the coefficent of the x^0 : 4
+Enter the coefficient of the x^3: 2
+Enter the coefficient of the x^2: 3
+Enter the coefficient of the x^1: 1
+Enter the coefficient of the x^0: 4
 
 First polynomial: 2x^3 + 3x^2 + 1x^1 + 4
 
 Enter the highest degree of the second polynomial: 2
-Enter the coefficent of the x^2 : 1
-Enter the coefficent of the x^1 : 2
-Enter the coefficent of the x^0 : 3
+Enter the coefficient of the x^2: 1
+Enter the coefficient of the x^1: 2
+Enter the coefficient of the x^0: 3
 
 Second polynomial: 1x^2 + 2x^1 + 3
 
