@@ -193,9 +193,9 @@ void transposeSparseMatrix(int smat[][3], int tmat[][3])
 }
 void main()
 {
-    printf("Enter  sparse matrix 1:\n");
+    printf("Enter sparse matrix 1:\n");
     readSparseMatrix(a);
-    printf("\nEnter  sparse matrix 2:\n");
+    printf("\nEnter sparse matrix 2:\n");
     readSparseMatrix(b);
     addSparseMatrices(a, b);
     printf("\nAddition of sparse matrices:\n");
