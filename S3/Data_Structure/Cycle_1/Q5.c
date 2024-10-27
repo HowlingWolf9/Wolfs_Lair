@@ -1,3 +1,51 @@
+/*
+Experiment: 5
+
+AIM:  Implement a Menu driven program to perform the following operations on Queue Data Structure using Arrays. 
+(i) Inserting an element to the Queue. 
+(ii) Deleting an element from the Queue. 
+(iii) Display the contents of the Queue
+
+ALGORITHM: main()
+Step 01: START
+Step 02: WHILE TRUE repeat steps 
+Step 03: 	Read the option from the user, opt
+Step 04:	SWITCH to opt
+Step 05:		CASE 1: Call enqueue() function by passing queue, size and rear
+Step 06:		CASE 2: dequeue() function by passing queue, front and rear
+Step 07:		CASE 3: display() function by passing queue, front and rear
+Step 08:		CASE 4: Print "Program Exited Successfully" and STOP
+Step 09:		DEFAULT: Print "Invalid operation" and STOP
+Step 10: STOP
+
+ALGORITHM: enqueue(int *queue, int size, int *rear)
+Step 01: START
+Step 02: IF (*rear>=(size-1))
+Step 03:	Print "OVERFLOW"
+Step 04: ELSE
+Step 05:	Read queue[*rear]
+Step 06:	Increment *rear
+Step 07: STOP
+
+ALGORITHM: dequeue(int *queue, int *front, int *rear)
+Step 01: START
+Step 02: IF (*rear<*front)
+Step 03:	Print "UNDERFLOW"
+Step 04: ELSE
+Step 05:	Set queue[*front] = '\0'
+Step 06:	Increment *front by 1
+Step 07: STOP
+
+ALGORITHM: display(int *queue, int *front, int *rear)
+Step 01: START
+Step 02: IF (*rear>*front)
+Step 03:	Initialize i = *front and repeat steps 04 to 05 until i < *rear
+Step 04:		Print queue[i]
+Step 05			Increment i by 1
+Step 06: ELSE
+Step 07: 	Print "Queue Empty"
+Step 08: STOP
+*/
 #include <stdio.h>
 void enqueue(int *queue, int size, int *rear)
 {
@@ -58,3 +106,6 @@ int main()
 		}
 	}
 }
+/*
+OUTPUT:
+*/
