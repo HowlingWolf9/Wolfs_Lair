@@ -13,16 +13,16 @@ ALGORITHM: linearSearch()
 Step 01: START
 Step 02: Initialize the key variable to 0
 Step 03: Read the element to be searched, elm
-Step 04: Initialize i = 0 and repeat steps 05 to 07 until i < SIZE
+Step 04: Initialize i = 0 and repeat steps 05 to 09 until i < SIZE
 Step 05:     IF arr[i] == elm
 Step 06:         Print the position of the element
 Step 07:         Set key = 1
 Step 08:     ENDIF
-Step 08:     Increment i by 1
-Step 09: IF key == 0
-Step 10:     Print the message "Element does not exist"
-Step 11: ENDIF
-Step 12: STOP
+Step 09:     Increment i by 1
+Step 10: IF key == 0
+Step 11:     Print the message "Element does not exist"
+Step 12: ENDIF
+Step 13: STOP
 */
 //CODE:
 #include <stdio.h>
