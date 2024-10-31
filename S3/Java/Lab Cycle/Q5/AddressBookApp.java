@@ -1,3 +1,38 @@
+/*
+Experiment: 5
+
+AIM: Create address book (name mob number)
+You are tasked with creating a simple contact book application in Java. The application should be able to add new contacts, search for contacts by name, and display all contacts. The contacts should be stored in a text file named contacts.txt. Each contact should have a name and a phone number. A menu driven program.
+
+ALGORITHM:
+Save contacts in file contact.txt in the format name:contact_number
+Define class person
+Define class AddressBook
+The constructor of AddressBook will read contact.txt line by line to a variable s
+The line in s will be split based on delimiter into an array of strings, arrOfStr
+From the data stored in arrOfStr, create an object of Person and store in array p
+Keep a count of persons in variable count
+Display details of persons from the array
+Add a new contact
+Read name and contact number
+Create new person object and keep in array p
+Contacts will be written to contact.txt when exiting the program
+Delete a contact
+Read a part of name and search in p for this piece of text
+On finding a person with this text as a part of name in array p
+Move all the persons right to this contact ,one position left
+Search a contact
+Read a part of name and search in p for this piece of text
+On finding a person with this text as a part of name in array
+    Print “found”
+Save contact list
+It is done when exiting the program
+Take person objects one by one from array p
+    Define a String variable newString
+    newString=”Name of person:contactNumber”
+    Write newString to the file contact.txt
+*/
+//CODE:
 import java.io.*;
 import java.util.Scanner;
 
