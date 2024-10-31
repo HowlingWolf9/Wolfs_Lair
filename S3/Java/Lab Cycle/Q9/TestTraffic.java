@@ -1,3 +1,24 @@
+/*
+Experiment: 9
+
+AIM: Write a Java program that simulates a traffic light. The program lets the user select one of three lights: red, yellow, or green. When a radio button is selected, the light is turned on, and only one light can be on at a time. No light is on when the program starts
+
+ALGORITHM:
+Select color of the traffic light using radio buttons
+A class TrafficLight is defined.
+It extends JPanel and implements ActionListener
+Define variables for colors, Red,Green,Orange
+Three radio buttons usd to select color
+At a time only one radio button should be activated. So group them using Button Group of javax.swing package
+Radio button corresponding to red color is selected for initial screen.
+When click on a radio button, for example green, make color of red and orange traffic lights to background color of JPanel.
+red_c = getBackground ();
+orange_c = getBackground();
+green_c = Color.green;
+Repaint all lights by using repaint() method.
+The TrafficLight object is added to a JFrame in main() mathod
+*/
+//CODE:
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
