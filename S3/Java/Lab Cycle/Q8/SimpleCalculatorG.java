@@ -1,3 +1,22 @@
+/*
+Experiment: 8
+
+AIM: Write a Java program that works as a simple calculator. Arrange Buttons for digits and the + - * % operations properly. Add a text field to display the result. Handle any possible exceptions like divide by zero. Use Java Swing. 
+
+ALGORITHM:
+Create class CalculatorGUI
+calculationField , a JTextField is the screen of calculator.
+
+When the user click number buttons, they should append to the text incalculationField(a text field). For this, a class NumberButtonListener created and this implemnts ActionListener.Overridden actionPrformed(). While adding the action listener on these buttons, an instance of NumberButtonListener is passed as argument. The constructor of NumberButtonListener receives an instance of CalculatorGUI as parameter.
+
+When user click operator button, an operator is appended to the text in calculationField.For this, a class OperatorButtonListener used, which implements ActionListener. Overridden actionPrformed(). While adding the action listener on these buttons, an instance of OperatorButtonListener is passed as argument.
+The constructor of OperatorButtonListener receives an instance of CalculatorGUI as parameter.
+
+When user click = button, The text from calculationField is taken and separate, operand1 , operand2 and operator using String.split(); This function returns an array of string. If its length !=3 , display an error message in calculationField. The result of operation is displayed oherwise.A class ButtonEquals assigned for this, which implements ActionListener.
+
+When user click CLEAR button,the result screen is cleared. A class ButtonClear is there for this activity, which implements ActionListener
+*/
+//CODE:
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
