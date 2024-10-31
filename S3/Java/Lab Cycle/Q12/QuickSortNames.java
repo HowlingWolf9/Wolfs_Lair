@@ -1,3 +1,25 @@
+/*
+Experiment: 12
+
+AIM: Write a Java program that implements Quick sort algorithm for sorting a list of names in ascending order 
+
+ALGORITHM:
+Initialize an array
+- Define an array of names
+- Print the original list of names
+Call the quickSort method with the array, starting index 0 and ending index length - 1
+In partition method, select the last element as pivot
+- Loop through the array
+- - If an element is less than or equal to the pivot, swap it to the left side
+- Place the pivot at its correct sorted position by swapping it with the element at index i+1
+- Return the index of the pivot
+Recursive sorting:
+- In quicksort, recursively sort the elements to the left of the pivot and to the right of the pivot until the whole array is sorted.
+Print the sorted array:
+- After sorting, print the final sorted array of names
+
+*/
+//CODE:
 public class QuickSortNames {
     public static void main(String[] args) {
         String[] names = { "John", "Alice", "Bob", "Eve", "Charlie", "David", "Frank" };
