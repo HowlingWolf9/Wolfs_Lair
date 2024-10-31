@@ -1,3 +1,50 @@
+/*
+Experiment: 11
+
+AIM: Create singly linked list-add,delete,search 
+
+ALGORITHM:
+Class Student defined
+Class Node defined
+    Data field is Student record
+
+Create linked list is done as follows
+    Read data and create new node.
+    if head is null
+        head=new node
+    else
+        Find last node
+        link field of last node = new node
+
+Search is done as folllows
+    Take the amission number of student
+    ptr=head
+    found=false
+    advance ptr until ptr becomes null
+        if ptr points a node carrying student record we are searching
+            found=true
+            stop search
+        if (found ==true) print "found"
+        else print "Not found"
+
+Record deletion is done as follows
+    Take admission number
+    ptr=head
+    found=false
+    prevNode=null
+    advance ptr until ptr becomes null
+        if ptr points a node carrying student record we are searching
+            found=true
+            stop search
+        else
+            Do prevNode=ptr for keeping a pointer to the predecessor of the node we want to delete
+    if (found ==true)
+        if (ptr==head)
+        head=ptr.link
+    else
+        prevNode.link=ptr.link
+*/
+//CODE:
 class Student {
     public String name;
     public String admno;
