@@ -1,16 +1,16 @@
 /*
 Experiment: 4
 
-AIM: Implement a Menu driven program to perform the following operations on a Stack  Data  Structure using Arrays. 
-a. Pushing elements to the stack. 
-b. Popping Elements from the stack. 
-c. Display the contents of the Stack. 
+AIM: Implement a Menu driven program to perform the following operations on a Stack Data Structure using Arrays.
+a. Pushing elements to the stack.
+b. Popping Elements from the stack.
+c. Display the contents of the Stack.
 
 ALGORITHM: main()
 Step 01: START
 Step 02: WHILE TRUE repeat steps 03 to 09
-Step 03: Read the option from the user, opt
-Step 04:     SWITCH to opt
+Step 03: 	Read the option from the user, opt
+Step 04:   	SWITCH to opt
 Step 05:        CASE 1: Call push() function
 Step 06:        CASE 2: Call pop() function
 Step 07:        CASE 3: Call display() function
@@ -51,14 +51,14 @@ Step 09: STOP
 */
 #include <stdio.h>
 #define SIZE 5
-int top=0;
+int top = 0;
 int stack[SIZE];
 void push()
 {
-	if (top<SIZE)
+	if (top < SIZE)
 	{
 		printf("Enter the number:");
-		scanf("%d",&stack[top]);
+		scanf("%d", &stack[top]);
 		(top)++;
 	}
 	else
@@ -66,9 +66,9 @@ void push()
 }
 void pop()
 {
-	if ((top)>0)
+	if ((top) > 0)
 	{
-		stack[top]='\0';
+		stack[top] = '\0';
 		(top)--;
 	}
 	else
@@ -77,9 +77,9 @@ void pop()
 void display()
 {
 
-	if ((top)>0)
-		for(int i=(top-1);i>=0;i--)
-			printf("[\t%d\t]\n",stack[i]);
+	if ((top) > 0)
+		for (int i = (top - 1); i >= 0; i--)
+			printf("[\t%d\t]\n", stack[i]);
 	else
 		printf("Stack is empty\n");
 }
@@ -89,24 +89,24 @@ int main()
 	while (1)
 	{
 		printf("\n1.PUSH\n2.POP\n3.DISPLAY\n4.EXIT\nSelect the option:");
-		scanf("%d",&opt);
-		switch(opt)
+		scanf("%d", &opt);
+		switch (opt)
 		{
-			case 1:
-				push();
-				break;
-			case 2:
-				pop();
-				break;
-			case 3:
-				display();
-				break;
-			case 4:
-				printf("Program Exited Successfully\n");
-				return 0;
-			default:
-				printf("Invalid operation\n");
-				break;
+		case 1:
+			push();
+			break;
+		case 2:
+			pop();
+			break;
+		case 3:
+			display();
+			break;
+		case 4:
+			printf("Program Exited Successfully\n");
+			return 0;
+		default:
+			printf("Invalid operation\n");
+			break;
 		}
 	}
 }
