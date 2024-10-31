@@ -67,24 +67,24 @@ int main()
 		scanf("%d", &opt);
 		switch (opt)
 		{
-			case 1:
-				printf("Enter the item to be inserted: \n");
-				scanf("%d", &item);
-				ENQUEUE(item);
-				display();
-				break;
-			case 2:
-				DEQUEUE();
-				display();
-				break;
-			case 3:
-				display();
-				break;
-			case 4:
-				break;
-			default:
-				printf(" \nInvaild choice!Please try again");
-				break;
+		case 1:
+			printf("Enter the item to be inserted: \n");
+			scanf("%d", &item);
+			ENQUEUE(item);
+			display();
+			break;
+		case 2:
+			DEQUEUE();
+			display();
+			break;
+		case 3:
+			display();
+			break;
+		case 4:
+			break;
+		default:
+			printf(" \nInvaild choice!Please try again");
+			break;
 		}
 	} while (opt != 4);
 }
