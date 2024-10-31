@@ -1,3 +1,16 @@
+/*
+Experiment: 4
+
+AIM: Write a Java program that reads a line of integers, and then displays each integer, and the sum of all the integers (Use String Tokenizer class of java.util).
+
+ALGORITHM:
+Read lines from data file to string variable s until no lines in file to be read
+{
+    Create a stringTokenizer object to store tokens after splitting the line read based on delimiter
+    Sum up the tokens after Converting them to integers
+}
+*/
+//CODE:
 import java.io.*;
 import java.util.*;
 
