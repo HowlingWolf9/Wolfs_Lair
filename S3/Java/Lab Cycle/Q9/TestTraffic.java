@@ -16,7 +16,7 @@ red_c = getBackground ();
 orange_c = getBackground();
 green_c = Color.green;
 Repaint all lights by using repaint() method.
-The TrafficLight object is added to a JFrame in main() mathod
+The TrafficLight object is added to a JFrame in main() method
 */
 //CODE:
 import javax.swing.*;
