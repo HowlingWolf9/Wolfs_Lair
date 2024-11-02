@@ -29,7 +29,6 @@ for (i = 1 to i < 100)
             Print n is odd. Cube is res
         }
         Sleep for 3 Seconds
-        
     }
     Increment i by 1
 }
@@ -47,7 +46,6 @@ for (i = 1 to i < 100)
             Print n is even. square is res
         }
         Sleep for 300 milliseconds
-        
     }
     Increment i by 1
 }
