@@ -57,7 +57,7 @@ Step 04:    Set *head = newNode
 Step 05:    STOP
 Step 06: ENDIF
 Step 07: Initialize struct Node *temp = *head
-Step 08: WHILE (temp->next != NULL) repeat step 08
+Step 08: WHILE (temp->next != NULL) repeat step 09
 Step 09:     Set temp = temp->next
 Step 10: Set temp->next = newNode
 Step 11: STOP
