@@ -55,12 +55,12 @@ Step 02: Call createNode() function and pass the data as an argument
 Step 03: IF (*head == NULL)
 Step 04:    Set *head = newNode
 Step 05:    STOP
-Step 06: ENFIF
-Step 06: Initialize struct Node *temp = *head
-Step 07: WHILE (temp->next != NULL) repeat step 08
-Step 08:     Set temp = temp->next
-Step 09: Set temp->next = newNode
-Step 10: STOP
+Step 06: ENDIF
+Step 07: Initialize struct Node *temp = *head
+Step 08: WHILE (temp->next != NULL) repeat step 08
+Step 09:     Set temp = temp->next
+Step 10: Set temp->next = newNode
+Step 11: STOP
 
 ALGORITHM: insertInSortedOrder(struct Node **head, int data)
 Step 01: START
@@ -325,6 +325,7 @@ void main()
 
 /*
 OUTPUT:
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -337,6 +338,7 @@ Menu
 9. Exit
 Enter your choice: 1
 Enter the data: 15
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -349,6 +351,7 @@ Menu
 9. Exit
 Enter your choice: 2
 Enter the data: 10
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -361,6 +364,7 @@ Menu
 9. Exit
 Enter your choice: 3
 Enter the data: 13
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -373,6 +377,7 @@ Menu
 9. Exit
 Enter your choice: 8                          
 13 15 10
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -384,6 +389,7 @@ Menu
 8. Display the linked list
 9. Exit
 Enter your choice: 5
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -395,6 +401,7 @@ Menu
 8. Display the linked list
 9. Exit
 Enter your choice: 7
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
@@ -407,6 +414,7 @@ Menu
 9. Exit
 Enter your choice: 8
 10 15
+
 Menu
 1. Insert at the beginning
 2. Insert at the end
