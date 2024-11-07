@@ -322,7 +322,6 @@ void main()
     }
     printf("Exiting the program\n");
 }
-
 /*
 OUTPUT:
 
