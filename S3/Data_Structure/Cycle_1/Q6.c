@@ -1,6 +1,6 @@
 #include <stdio.h>
-int A[20], size, front, rear;
-
+int A[20], size, front = -1, rear = -1;
+void DISPLAY();
 void ENQUEUE_CQ(int item)
 {
     if (((rear + 1) % size) == front)
@@ -10,11 +10,13 @@ void ENQUEUE_CQ(int item)
         front = 0;
         rear = 0;
         A[rear] = item;
+        DISPLAY();
     }
     else
     {
         rear = (rear + 1) % size;
         A[rear] = item;
+        DISPLAY();
     }
 }
 
@@ -27,11 +29,13 @@ void DEQUEUE_CQ()
         printf("Deleted item is %d\n", A[front]);
         front = -1;
         rear = -1;
+        DISPLAY();
     }
     else
     {
         printf("Deleted item is %d \n", A[front]);
         front = (front + 1) % size;
+        DISPLAY();
     }
 }
 
@@ -56,14 +60,12 @@ void DISPLAY()
 int main()
 {
     int opt, item;
-    rear = -1;
-    front = -1;
     printf("Enter the size of circular queue: \n");
     scanf("%d", &size);
     do
     {
-        printf("\nMenu\n");
-        printf("\n1.ENQUEUE\t 2.DEQUEUE \t 3.DISPLAY \t 4.EXIT");
+        printf("\nMenu:\n");
+        printf("1.ENQUEUE\t 2.DEQUEUE \t 3.DISPLAY \t 4.EXIT");
         printf("\nEnter the option:");
         scanf("%d", &opt);
         switch (opt)
@@ -72,11 +74,9 @@ int main()
                 printf("Enter the item to be inserted: \n");
                 scanf("%d", &item);
                 ENQUEUE_CQ(item);
-                DISPLAY();
                 break;
             case 2:
                 DEQUEUE_CQ();
-                DISPLAY();
                 break;
             case 3:
                 DISPLAY();
