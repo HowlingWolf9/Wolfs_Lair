@@ -22,7 +22,7 @@ public class DSVProcessor {
                     sums.set(index, sums.get(index) + sum);
                 } else {
                     ids.add(id);
-                    sums.add(sum);
+                    sums.add(su m);
                 }
             }
         } catch (IOException e) {
