@@ -54,7 +54,16 @@ int main(){
     miss = ((float)fault / n) * 100;
     hit = ((float)(n - fault) / n) * 100;
     printf("Total No.of Faults: %d\n", fault);
-    printf("Hit Ratio: %.2f\n", hit);
-    printf("Miss Ratio: %.2f\n", miss);
+    printf("Hit Ratio: %.2f%%\n", hit);
+    printf("Miss Ratio: %.2f%%\n", miss);
     return 0;
 }
+/*
+OUTPUT:
+Enter the No.of References: 8 
+Enter the References: 1 2 3 4 1 2 5 1
+Enter the Frame Size: 7
+Total No.of Faults: 5
+Hit Ratio: 37.50%
+Miss Ratio: 62.50%
+*/
