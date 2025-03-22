@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
             "intelliSenseMode": "linux-gcc-x64"
         }
     ],
