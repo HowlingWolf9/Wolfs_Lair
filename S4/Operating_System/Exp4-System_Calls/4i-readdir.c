@@ -6,6 +6,7 @@ STEP 03: Use readdir() to read the contents of the directory
 STEP 04: Print the names of the files in the directory
 STEP 05: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <dirent.h>
 

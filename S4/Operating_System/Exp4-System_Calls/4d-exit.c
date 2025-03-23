@@ -4,6 +4,7 @@ STEP 01: Include the necessary header files
 STEP 02: Use the exit() system call to terminate the program with a status code 0
 STEP 03: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <stdlib.h>
 

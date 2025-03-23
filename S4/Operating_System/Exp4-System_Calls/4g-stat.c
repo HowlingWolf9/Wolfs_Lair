@@ -5,6 +5,7 @@ STEP 02: Use stat() to get the file status
 STEP 03: Print the file information like size and permission
 STEP 04: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>

@@ -6,6 +6,7 @@ STEP 03: In the parent use wait() to wait for the child to terminate
 STEP 04: Print the Process ID of the parent and child
 STEP 05: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>

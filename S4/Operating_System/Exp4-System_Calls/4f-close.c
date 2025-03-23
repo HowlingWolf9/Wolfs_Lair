@@ -5,6 +5,7 @@ STEP 02: Open a file using open()
 STEP 03: Use close() to close the file descriptor
 STEP 04: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>

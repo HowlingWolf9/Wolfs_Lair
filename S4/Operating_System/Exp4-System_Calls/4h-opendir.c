@@ -5,6 +5,7 @@ STEP 02: Use opendir() to open a directory
 STEP 03: Check if the directory is opened successfully
 STEP 04: STOP
 */
+//CODE:
 #include <stdio.h>
 #include <dirent.h>
 
