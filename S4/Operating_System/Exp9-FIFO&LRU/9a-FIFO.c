@@ -20,7 +20,6 @@ STEP 07: For each reference ( i, from 0 to n - 1):
 STEP 08: Calculate the miss ratio = (fault / n) * 100 and hit ratio = ((n - fault) / n) * 100
 STEP 09: Print the total number of faults, hit ratio, and miss ratio
 STEP 10: Stop
-
 */
 //CODE:
 #include <stdio.h>
