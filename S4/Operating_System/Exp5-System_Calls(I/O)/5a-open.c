@@ -24,5 +24,5 @@ void main()
 }
 /*
 OUTPUT:
-
+File opened successfully with file descriptor: 3
 */
