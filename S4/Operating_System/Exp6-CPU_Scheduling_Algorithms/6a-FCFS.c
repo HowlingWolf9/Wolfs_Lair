@@ -1,8 +1,8 @@
 /*
 ALGORITHM:
 STEP 01: START
-STEP 02: Inside the structure declare the variable
-STEP 03: Declare the variable i,n as integer, totwtime, totttime is equal to 0
+STEP 02: Inside the structure declare the variable pid, btime, wtime, ttime
+STEP 03: Declare the variable i,n as integer, totwtime and totttime as 0
 STEP 04: Get the value of n and assign pid as 1 and get the value of p[i].btime
 STEP 05: Assign p[0].wtime as 0 and p[0].btime to p[0].ttime. Inside the loop calculate the waiting time and turnaround time of each
 STEP 06: Calculate the average waiting time and average turnaround time
