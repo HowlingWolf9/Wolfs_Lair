@@ -48,7 +48,7 @@ void main() {
         p[i].remaining_btime = p[i].btime;
     }
 
-    printf("\nGaant Chart:\n");
+    printf("\nGantt Chart:\n");
     printf("Time\t|Process\n");
 
     while (completed_processes < n) {
@@ -120,7 +120,7 @@ Process 4:
 Enter the arrival time: 4
 Enter the burst time: 5
 
-Gaant Chart:
+Gantt Chart:
 Time    |Process
 0       |P1
 1       |P2
