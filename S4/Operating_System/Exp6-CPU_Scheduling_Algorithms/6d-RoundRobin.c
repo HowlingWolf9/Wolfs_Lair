@@ -86,22 +86,25 @@ void main()
 OUTPUT:
 Enter Total Process: 3
 
-For Process 1
+Process 1
+----------
 Enter Arrival Time: 1
 Enter Burst Time: 4
 
-For Process 2
+Process 2
+----------
 Enter Arrival Time: 2
 Enter Burst Time: 9
 
-For Process 3
+Process 3
+----------
 Enter Arrival Time: 0
 Enter Burst Time: 6
 
 Enter Time-Slice: 4
 
-Total Waiting Time= 14.00
-Average Waiting Time= 4.67
-Total Turnaround Time= 33.00
-Average Turnaround Time= 11.00
+Total Waiting Time= 19.00
+Average Waiting Time= 6.33
+Total Turnaround Time= 38.00
+Average Turnaround Time= 12.67
 */
