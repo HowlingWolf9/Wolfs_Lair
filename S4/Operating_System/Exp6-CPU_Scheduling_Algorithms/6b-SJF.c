@@ -57,7 +57,7 @@ void main()
         totttime += p[i].ttime;
         totwtime += p[i].wtime;
     }
-    printf("\nGaant Chart:\n");
+    printf("\nGantt Chart:\n");
     printf("Process\t|Burst Time\t|Waiting Time\t|Turnaround Time|\n");
     for (i = 0; i < n; i++)
         printf("%d\t|%d\t\t|%d\t\t|%d\t\t|\n", p[i].pid, p[i].btime, p[i].wtime, p[i].ttime);
@@ -74,7 +74,7 @@ Enter the burst time for process 1: 3
 Enter the burst time for process 2: 27
 Enter the burst time for process 3: 3
 
-Gaant Chart:
+Gantt Chart:
 Process |Burst Time     |Waiting Time   |Turnaround Time|
 1       |3              |0              |3              |
 3       |3              |3              |6              |
