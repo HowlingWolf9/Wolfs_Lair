@@ -1,14 +1,22 @@
 /*
 ALGORITHM:
 STEP 01: START
-STEP 02: Include the necessary header files
-STEP 03: Initialize the variables
-STEP 04: Input the initial head position, maximum cylinder value, and number of requests
-STEP 05: Input the I/O queue requests
-STEP 06: Sort the I/O queue requests in ascending order
-STEP 07: Calculate the total seek time and average seek time
-STEP 08: Print the order of requests served and total seek time
-STEP 09: STOP
+STEP 02: Read number of disk requests, the initial head position, the maximum cylinder value and the disk requests from the user
+STEP 03: Sort the disk requests in ascending order
+STEP 04: Find the starting index for the scan based on the first disk request greater or equal to the initial head position
+STEP 05: Print the initial head position
+STEP 06: Scan in forward direction from the starting index to the end of the disk requests
+STEP 06.01: Print disk request value
+STEP 06.02: Update total seek time by adding absolute difference between current head position and disk request value
+STEP 06.03: Update current head position to disk request value
+STEP 07: Handle the warp-around case by updating the current head position to the maximum cylinder value
+STEP 08: Print the end of the disk
+STEP 09: Scan in forward direction from the beginning to the starting index
+STEP 09.01: Print disk request value
+STEP 09.02: Update total seek time by adding absolute difference between current head position and disk request value
+STEP 09.03: Update current head position to disk request value
+STEP 10: Print the total seek time
+STEP 11: STOP
 */
 #include <stdio.h>
 #include <stdlib.h>
