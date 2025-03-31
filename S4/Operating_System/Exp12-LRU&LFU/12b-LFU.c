@@ -28,7 +28,7 @@ typedef struct {
     int frequency;
 } Frame;
 
-int main() {
+void main() {
     int reference[MAX_REFERENCES], n, fsize, i, j, fault = 0;
     float miss, hit;
     Frame frame[MAX_FRAMES];
@@ -94,7 +94,6 @@ int main() {
     printf("Hit Ratio: %.2f%%\n", hit);
     printf("Miss Ratio: %.2f%%\n", miss);
     
-    return 0;
 }
 /*
 OUTPUT:
