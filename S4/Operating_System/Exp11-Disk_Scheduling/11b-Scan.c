@@ -1,7 +1,7 @@
 /*
 ALGORITHM:
 STEP 01: START
-STEP 02: Read number of disk reqquests, the initial head position and the disk requests from the user
+STEP 02: Read number of disk requests, the initial head position and the disk requests from the user
 STEP 03: Sort the disk requests in ascending order
 STEP 04: Determine the starting index for the scan based on the initial head position
 STEP 05: Scan in forward direction
