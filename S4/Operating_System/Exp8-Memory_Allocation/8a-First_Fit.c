@@ -1,6 +1,6 @@
 /*
 ALGORITHM:
-STEP 01: Start
+STEP 01: START
 STEP 02: At first get the number of references and blocks
 STEP 03: Allocate the process by if (size of block >= size of process) then allocate the process else move to the next block
 STEP 04: Now display the process with the blocks and allocate to respective process
