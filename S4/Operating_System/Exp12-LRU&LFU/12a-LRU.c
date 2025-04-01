@@ -6,15 +6,12 @@ STEP 03: Create an empty frame of size fsize and set all values to -1
 STEP 04: Initialize fault = 0 to track the number of page faults
 STEP 05: For each reference, reference[i]:
 STEP 05.01: Check if it is already present in the frame:
-STEP 05.01.01: If found, its a hit, move to the next reference
-STEP 05.01.02: If not found, its a fault:
+STEP 05.01.01: If found, it's a hit, move to the next reference
+STEP 05.01.02: If not found, it's a fault:
 STEP 05.01.02.01: If the frame is not full, place the reference in the first empty frame
 STEP 05.01.02.02: If the frame is full:
-STEP 05.01.02.02.01: If the frame is not full, place the reference in the first empty frame
-STEP 05.01.02.02.02: If the frame is full:
-STEP 05.01.02.02.02.01: Identify the LRU page (the one with oldest reference)
-STEP 05.01.02.02.02.02: Replace the LRU page with the current reference
-STEP 06: Print the total number of faults
+STEP 05.01.02.02.01: Identify the LRU page (the one with the oldest reference) and replace it with the current reference
+STEP 06: Increment the fault count
 STEP 07: Calculate the hit ratio = ((n - fault) / n) * 100 and miss ratio = (fault / n) * 100
 STEP 08: Print the hit ratio and miss ratio
 STEP 09: STOP
