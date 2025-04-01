@@ -1,7 +1,7 @@
 /*
-AIM: To write a C program to implement FIFO page replacement algorithm.
+AIM: To write a C program to simulate FIFO page replacement algorithm.
 ALGORITHM:
-STEP 01: Start
+STEP 01: START
 STEP 02: Input the number of references
 STEP 03: Input the reference string
 STEP 04: Input the frame size
