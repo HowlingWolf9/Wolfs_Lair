@@ -1,10 +1,11 @@
 /*
 ALGORITHM:
-STEP 01: Input memory with size and process with size
-STEP 02: Initializee all memory blocks as free
-STEP 03: Start by picking each process and find minimum block size that can be assigned to current process, i.e. find min(block_size[i], block_size. If found then assign to the current process
-STEP 04: If not found then leave that process and keep checking further processes
-STEP 05: STOP
+STEP 01: START
+STEP 02: Input memory with size and process with size
+STEP 03: Initializee all memory blocks as free
+STEP 04: Start by picking each process and find minimum block size that can be assigned to current process, i.e. find min(block_size[i], block_size. If found then assign to the current process
+STEP 05: If not found then leave that process and keep checking further processes
+STEP 06: STOP
 */
 //CODE:
 #include <stdio.h>
