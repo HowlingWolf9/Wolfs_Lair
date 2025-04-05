@@ -1,9 +1,4 @@
-/*
-AIM:Simulate priority based CPU scheduling algorithm and find average turnaround time and average waiting time
-
-ALGORITHM:
-
-*/
+//AIM:Simulate priority based CPU scheduling algorithm and find average turnaround time and average waiting time
 //CODE:
 #include <stdio.h>
 
@@ -43,7 +38,8 @@ void main()
                 p[j] = p[j + 1];
                 p[j + 1] = temp;
             }
-    
+
+    //Calculation
     p[0].wt = 0;
     p[0].tat = p[0].bt;
     ttat = p[0].tat;
@@ -55,9 +51,7 @@ void main()
         ttat += p[i].tat;
     }
 
-    for (i = 0; i < n; i++)
-            printf("\nP%d: BT:%d P:%d WT:%d TAT:%d", p[i].pid, p[i].bt, p[i].pty, p[i].wt, p[i].tat);
-
+    //Output
     printf("\n\nTotal Waiting Time: %.2f", twat);
     printf("\nTotal Turn-around Time: %.2f", ttat);
     printf("\nAvg. Waiting Time: %.2f", twat/n);
