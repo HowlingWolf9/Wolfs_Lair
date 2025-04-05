@@ -1,0 +1,18 @@
+id  |BT |P
+P1  |10 |1
+P2  |5  |0
+P3  |7  |2
+P4  |8  |3
+
+Gantt
+id  |BT |P  |WT |TAT
+P2  |5  |0  |0  |5 
+P1  |10 |1  |5  |15
+P3  |7  |2  |15 |22
+P4  |8  |3  |22 |30
+
+Total WT = 42
+Total TAT = 72
+
+Avg. WT = 8
+Avg. TAT = 18
