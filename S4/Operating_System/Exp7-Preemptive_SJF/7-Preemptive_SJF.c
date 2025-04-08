@@ -36,7 +36,8 @@ void main() {
     printf("Enter the number of processes: ");
     scanf("%d", &n);
     struct sjf p[n];
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
+    {
         printf("\nProcess %d:\n", i + 1);
         printf("----------\n");
         printf("Enter the arrival time: ");
@@ -51,12 +52,14 @@ void main() {
     printf("\nGantt Chart:\n");
     printf("Time\t|Process\n");
 
-    while (completed_processes < n) {
+    while (completed_processes < n) 
+    {
         int shortest_job = -1;
         int min_btime = 9999; 
 
         for (i = 0; i < n; i++) {
-            if (p[i].atime <= time && p[i].completed == 0) {
+            if (p[i].atime <= time && p[i].completed == 0) 
+            {
                 if (p[i].remaining_btime < min_btime) {
                     min_btime = p[i].remaining_btime;
                     shortest_job = i;
@@ -64,7 +67,8 @@ void main() {
             }
         }
 
-        if (shortest_job == -1) {
+        if (shortest_job == -1) 
+        {
             printf("%d\t|Idle\n", time);
             time++;
             continue;
@@ -74,7 +78,8 @@ void main() {
         printf("%d\t|P%d\n", time, p[shortest_job].pid);
         time++;
 
-        if (p[shortest_job].remaining_btime == 0) {
+        if (p[shortest_job].remaining_btime == 0) 
+        {
             p[shortest_job].completed = 1;
             completed_processes++;
             p[shortest_job].ttime = time - p[shortest_job].atime;
