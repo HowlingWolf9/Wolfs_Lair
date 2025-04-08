@@ -108,6 +108,19 @@ void main()
             frame[min_index].frequency = 1;
             fault++;
         }
+        
+        // Print the frame changes
+        printf("Iteration %d:\t", i + 1);
+        for (j = 0; j < fsize; j++)
+            if (frame[j].page != -1)
+                printf("| %d ", frame[j].page);
+            else
+                printf("| - ");
+        printf("|\t");
+        if (flag == 0)
+            printf("Miss\n");
+        else
+            printf("Hit\n");
     }
     
     // Print the total number of faults
