@@ -57,15 +57,13 @@ void main() {
         int shortest_job = -1;
         int min_btime = 9999; 
 
-        for (i = 0; i < n; i++) {
+        for (i = 0; i < n; i++)
             if (p[i].atime <= time && p[i].completed == 0) 
-            {
-                if (p[i].remaining_btime < min_btime) {
+                if (p[i].remaining_btime < min_btime) 
+                {
                     min_btime = p[i].remaining_btime;
                     shortest_job = i;
                 }
-            }
-        }
 
         if (shortest_job == -1) 
         {
@@ -91,10 +89,8 @@ void main() {
     }
 
     printf("\nProcess\t|Arrival Time\t|Burst Time\t|Waiting Time\t|Turnaround Time|\n");
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
         printf("P%d\t|%d\t\t|%d\t\t|%d\t\t|%d\t\t|\n", p[i].pid, p[i].atime, p[i].btime, p[i].wtime, p[i].ttime);
-    }
-
     printf("\nTotal Waiting Time: %d\n", totwtime);
     printf("Average Waiting Time: %.2f\n", (float)totwtime / n);
     printf("Total Turnaround Time: %d\n", totttime);
