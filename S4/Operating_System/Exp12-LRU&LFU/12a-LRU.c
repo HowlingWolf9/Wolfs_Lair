@@ -18,26 +18,43 @@ STEP 09: STOP
 */
 //CODE:
 #include <stdio.h>
-int main(){
+void main(){
     int reference[50], frame[50], fsize, i, j, flag, c = 0, n, fault = 0, lru;
     float miss, hit;
+
+    // Input the number of references
     printf("Enter the No.of References: ");
     scanf("%d", &n);
+
+    // Input the references
     printf("Enter the References: ");
     for (i = 0; i < n; i++)
         scanf("%d", &reference[i]);
+
+    // Input the frame size
     printf("Enter the Frame Size: ");
     scanf("%d", &fsize);
+
+    // Initialize the frame
     for (i = 0; i < fsize; i++)
         frame[i] = -1;
-    for (i = 0; i < n; i++){
+
+    // Process the references    
+    for (i = 0; i < n; i++)
+    {
         flag = 0;
-        for (j = 0; j < fsize; j++){
-            if (frame[j] == reference[i]){
+
+        // Check if the reference is already present in the frame
+        for (j = 0; j < fsize; j++)
+        {
+            if (frame[j] == reference[i])
+            {
                 flag = 1;
                 break;
             }
         }
+
+        // If not found, it's a fault
         if (flag == 0)
         {
             if (c < fsize)
@@ -49,6 +66,8 @@ int main(){
             {
                 int lru_index = -1;
                 int oldest_time = -1;
+
+                // Find the LRU page
                 for (j = 0; j < fsize; j++)
                 {
                     int time = -1;
@@ -68,19 +87,51 @@ int main(){
             }
             fault++;
         }
+        
+        // Print the frame changes
+        printf("Iteration %d:\t", i + 1);
+        for (j = 0; j < fsize; j++)
+            if (frame[j] != -1)
+                printf("| %d ", frame[j]);
+            else
+                printf("| - ");
+        printf("|\t");
+        if (flag == 0)
+            printf("Miss\n");
+        else
+            printf("Hit\n");
     }
+    
+    // Print the total number of faults
     printf("Total No.of Faults: %d\n", fault);
+    
+    // Calculate the hit ratio and miss ratio
     miss = ((float)fault / n) * 100;
     hit = ((float)(n - fault) / n) * 100;
+    
+    // Print the hit ratio and miss ratio
     printf("Hit Ratio: %.2f%%\n", hit);
     printf("Miss Ratio: %.2f%%\n", miss);
-    return 0;
 }
 /*
 OUTPUT:
 Enter the No.of References: 14
-Enter the References: 7 0 1 2 0 3 0 4 2 3 0 3 2 0                           
+Enter the References: 7 0 1 2 0 3 0 4 2 3 0 3 2 0
 Enter the Frame Size: 4
+Iteration 1:    | 7 | - | - | - |       Miss
+Iteration 2:    | 7 | 0 | - | - |       Miss
+Iteration 3:    | 7 | 0 | 1 | - |       Miss
+Iteration 4:    | 7 | 0 | 1 | 2 |       Miss
+Iteration 5:    | 7 | 0 | 1 | 2 |       Hit
+Iteration 6:    | 3 | 0 | 1 | 2 |       Miss
+Iteration 7:    | 3 | 0 | 1 | 2 |       Hit
+Iteration 8:    | 3 | 0 | 4 | 2 |       Miss
+Iteration 9:    | 3 | 0 | 4 | 2 |       Hit
+Iteration 10:   | 3 | 0 | 4 | 2 |       Hit
+Iteration 11:   | 3 | 0 | 4 | 2 |       Hit
+Iteration 12:   | 3 | 0 | 4 | 2 |       Hit
+Iteration 13:   | 3 | 0 | 4 | 2 |       Hit
+Iteration 14:   | 3 | 0 | 4 | 2 |       Hit
 Total No.of Faults: 6
 Hit Ratio: 57.14%
 Miss Ratio: 42.86%
