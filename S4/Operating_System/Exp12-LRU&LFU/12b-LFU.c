@@ -137,10 +137,26 @@ void main()
 }
 /*
 OUTPUT:
-Enter the No.of References: 7
-Enter the References: 1 2 3 4 2 1 5
+Enter the No.of References: 16
+Enter the References: 7 0 2 4 3 1 4 7 2 0 4 3 0 3 2 7
 Enter the Frame Size: 3
-Total No.of Faults: 6
-Hit Ratio: 14.29%
-Miss Ratio: 85.71%
+Iteration 1:    | 7 | - | - |   Miss
+Iteration 2:    | 7 | 0 | - |   Miss
+Iteration 3:    | 7 | 0 | 2 |   Miss
+Iteration 4:    | 4 | 0 | 2 |   Miss
+Iteration 5:    | 3 | 0 | 2 |   Miss
+Iteration 6:    | 1 | 0 | 2 |   Miss
+Iteration 7:    | 4 | 0 | 2 |   Miss
+Iteration 8:    | 7 | 0 | 2 |   Miss
+Iteration 9:    | 7 | 0 | 2 |   Hit
+Iteration 10:   | 7 | 0 | 2 |   Hit
+Iteration 11:   | 4 | 0 | 2 |   Miss
+Iteration 12:   | 3 | 0 | 2 |   Miss
+Iteration 13:   | 3 | 0 | 2 |   Hit
+Iteration 14:   | 3 | 0 | 2 |   Hit
+Iteration 15:   | 3 | 0 | 2 |   Hit
+Iteration 16:   | 7 | 0 | 2 |   Miss
+Total No.of Faults: 11
+Hit Ratio: 31.25%
+Miss Ratio: 68.75%
 */
