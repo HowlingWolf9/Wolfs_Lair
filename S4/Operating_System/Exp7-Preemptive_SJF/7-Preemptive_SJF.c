@@ -36,7 +36,8 @@ void main() {
     printf("Enter the number of processes: ");
     scanf("%d", &n);
     struct sjf p[n];
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
+    {
         printf("\nProcess %d:\n", i + 1);
         printf("----------\n");
         printf("Enter the arrival time: ");
@@ -51,20 +52,21 @@ void main() {
     printf("\nGantt Chart:\n");
     printf("Time\t|Process\n");
 
-    while (completed_processes < n) {
+    while (completed_processes < n) 
+    {
         int shortest_job = -1;
         int min_btime = 9999; 
 
-        for (i = 0; i < n; i++) {
-            if (p[i].atime <= time && p[i].completed == 0) {
-                if (p[i].remaining_btime < min_btime) {
+        for (i = 0; i < n; i++)
+            if (p[i].atime <= time && p[i].completed == 0) 
+                if (p[i].remaining_btime < min_btime) 
+                {
                     min_btime = p[i].remaining_btime;
                     shortest_job = i;
                 }
-            }
-        }
 
-        if (shortest_job == -1) {
+        if (shortest_job == -1) 
+        {
             printf("%d\t|Idle\n", time);
             time++;
             continue;
@@ -74,7 +76,8 @@ void main() {
         printf("%d\t|P%d\n", time, p[shortest_job].pid);
         time++;
 
-        if (p[shortest_job].remaining_btime == 0) {
+        if (p[shortest_job].remaining_btime == 0) 
+        {
             p[shortest_job].completed = 1;
             completed_processes++;
             p[shortest_job].ttime = time - p[shortest_job].atime;
@@ -86,10 +89,8 @@ void main() {
     }
 
     printf("\nProcess\t|Arrival Time\t|Burst Time\t|Waiting Time\t|Turnaround Time|\n");
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
         printf("P%d\t|%d\t\t|%d\t\t|%d\t\t|%d\t\t|\n", p[i].pid, p[i].atime, p[i].btime, p[i].wtime, p[i].ttime);
-    }
-
     printf("\nTotal Waiting Time: %d\n", totwtime);
     printf("Average Waiting Time: %.2f\n", (float)totwtime / n);
     printf("Total Turnaround Time: %d\n", totttime);

@@ -23,7 +23,8 @@ bool finished[MAX_PROCESSES];
 int num_processes, num_resources;
 
 bool is_cyclic(int process) {
-    if (visited[process]) return true;
+    if (visited[process]) 
+        return true;
     visited[process] = true;
     
     for (int j = 0; j < num_resources; j++) {
@@ -68,18 +69,38 @@ void release_resource(int p, int r) {
     }
 }
 
-int main() {
-    num_processes = 3;
-    num_resources = 2;
+int main() 
+{
+    printf("Enter the number of processes and resources: ");
+    scanf("%d %d", &num_processes, &num_resources);
 
-    request_resource(0, 0);
-    request_resource(1, 1);
-    request_resource(1, 0);
-    request_resource(0, 1);
-    release_resource(0, 0);
-    request_resource(0, 1); 
-
-    return 0;
+    int ch;
+    int p, r;
+    do{
+        printf("\n==== YOUR CHOICES ====\n");
+        printf("1. Request a resource\n");
+        printf("2. Release a resource\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+        switch (ch) {
+            case 1:
+                printf("Enter the process number and resource number: ");
+                scanf("%d %d", &p, &r);
+                request_resource(p, r);
+                break;
+            case 2:
+                printf("Enter the process number and resource number: ");
+                scanf("%d %d", &p, &r);
+                release_resource(p, r);
+                break;
+            case 3:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
+    }while(ch != 3);
 }
 /*
 OUTPUT:
