@@ -1,3 +1,21 @@
+mysql> CREATE TABLE employee   (empNo INT PRIMARY KEY,
+    ->                         empName VARCHAR(25),
+    ->                         empAddress VARCHAR(50),
+    ->                         salary INT, dept VARCHAR(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESC employee;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| empNo      | int         | NO   | PRI | NULL    |       |
+| empName    | varchar(25) | YES  |     | NULL    |       |
+| empAddress | varchar(50) | YES  |     | NULL    |       |
+| salary     | int         | YES  |     | NULL    |       |
+| dept       | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
 mysql> INSERT INTO employee
     -> VALUES (2001, 'Hari', 'Palakkad', 30000, 'Reasearch'),
     ->        (2002, 'Devi', 'Kasaragod', 40000, 'Network'),
