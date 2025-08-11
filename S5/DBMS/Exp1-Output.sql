@@ -1,187 +1,106 @@
-mysql> CREATE TABLE student(studentNo INT PRIMARY KEY,
-    ->                     studentName VARCHAR(50),
-    ->                     maths INT,
-    ->                     physics INT,
-    ->                     chemistry INT,
-    ->                     cProgramming INT,
-    ->                     department VARCHAR(10),
-    ->                     address VARCHAR(50));
-Query OK, 0 rows affected (0.02 sec)
-
-mysql> DESC student;
-+--------------+-------------+------+-----+---------+-------+
-| Field        | Type        | Null | Key | Default | Extra |
-+--------------+-------------+------+-----+---------+-------+
-| studentNo    | int         | NO   | PRI | NULL    |       |
-| studentName  | varchar(50) | YES  |     | NULL    |       |
-| maths        | int         | YES  |     | NULL    |       |
-| physics      | int         | YES  |     | NULL    |       |
-| chemistry    | int         | YES  |     | NULL    |       |
-| cProgramming | int         | YES  |     | NULL    |       |
-| department   | varchar(10) | YES  |     | NULL    |       |
-| address      | varchar(50) | YES  |     | NULL    |       |
-+--------------+-------------+------+-----+---------+-------+
-8 rows in set (0.01 sec)
-
-mysql> INSERT INTO student
-    -> VALUES (100, 'Hari', 50, 60, 45, 75, 'CSE', 'Kasaragod'),
-    ->        (101, 'Devi', 60, 55, 78, 40, 'CSE', 'Kasaragod'),
-    ->        (102, 'Sam', 45, 77, 88, 45, 'IT', 'Kannur'),
-    ->        (103, 'Sreehari', 90, 75, 77, 60, 'IT', 'Calicut'),
-    ->        (104, 'Rani', 91, 98, 89, 52, 'ECE', 'Kannur'),
-    ->        (105, 'Raj', 88, 77, 67, 48, 'CSE', 'Palakkad');
-Query OK, 6 rows affected (0.01 sec)
-Records: 6  Duplicates: 0  Warnings: 0
+mysql> INSERT INTO employee
+    -> VALUES (2001, 'Hari', 'Palakkad', 30000, 'Reasearch'),
+    ->        (2002, 'Devi', 'Kasaragod', 40000, 'Network'),
+    ->        (2003, 'Gupta', 'Kannur', 50000, 'System Admin'),
+    ->        (2004, 'Ravi', 'Calicut', 60000, 'HR'),
+    ->        (2005, 'Rani', 'Calicut', 70000, 'HR');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
 
 mysql> SELECT *
-    -> FROM student;
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-| studentNo | studentName | maths | physics | chemistry | cProgramming | department | address   |
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-|       100 | Hari        |    50 |      60 |        45 |           75 | CSE        | Kasaragod |
-|       101 | Devi        |    60 |      55 |        78 |           40 | CSE        | Kasaragod |
-|       102 | Sam         |    45 |      77 |        88 |           45 | IT         | Kannur    |
-|       103 | Sreehari    |    90 |      75 |        77 |           60 | IT         | Calicut   |
-|       104 | Rani        |    91 |      98 |        89 |           52 | ECE        | Kannur    |
-|       105 | Raj         |    88 |      77 |        67 |           48 | CSE        | Palakkad  |
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-6 rows in set (0.01 sec)
+    -> FROM employee;
++-------+---------+------------+--------+--------------+
+| empNo | empName | empAddress | salary | dept         |
++-------+---------+------------+--------+--------------+
+|  2001 | Hari    | Palakkad   |  30000 | Reasearch    |
+|  2002 | Devi    | Kasaragod  |  40000 | Network      |
+|  2003 | Gupta   | Kannur     |  50000 | System Admin |
+|  2004 | Ravi    | Calicut    |  60000 | HR           |
+|  2005 | Rani    | Calicut    |  70000 | HR           |
++-------+---------+------------+--------+--------------+
+5 rows in set (0.01 sec)
 
-mysql> SELECT studentNO,
-    ->        studentName
-    -> FROM student
-    -> WHERE cProgramming < 50
-    -> ORDER BY cProgramming ASC;
-+-----------+-------------+
-| studentNO | studentName |
-+-----------+-------------+
-|       101 | Devi        |
-|       102 | Sam         |
-|       105 | Raj         |
-+-----------+-------------+
-3 rows in set (0.00 sec)
-
-mysql> SELECT studentNO,
-    ->        studentName,
-    ->        department
-    -> FROM student
-    -> ORDER BY department DESC,
-    ->          studentName ASC;
-+-----------+-------------+------------+
-| studentNO | studentName | department |
-+-----------+-------------+------------+
-|       102 | Sam         | IT         |
-|       103 | Sreehari    | IT         |
-|       104 | Rani        | ECE        |
-|       101 | Devi        | CSE        |
-|       100 | Hari        | CSE        |
-|       105 | Raj         | CSE        |
-+-----------+-------------+------------+
-6 rows in set (0.00 sec)
-
-mysql> SELECT studentName
-    -> FROM student
-    -> WHERE studentName LIKE 'S%';
+mysql> SELECT SUM(salary)
+    -> FROM employee;
 +-------------+
-| studentName |
+| SUM(salary) |
 +-------------+
-| Sam         |
-| Sreehari    |
-+-------------+
-2 rows in set (0.00 sec)
-
-mysql> SELECT studentName
-    -> FROM student
-    -> ORDER BY cProgramming DESC
-    -> LIMIT 1
-    -> OFFSET 1;
-+-------------+
-| studentName |
-+-------------+
-| Sreehari    |
+|      250000 |
 +-------------+
 1 row in set (0.00 sec)
 
-mysql> SELECT department,
-    ->        COUNT(department) AS 'No.of Students',
-    ->        AVG(maths)
-    -> FROM student
-    -> GROUP BY department;
-+------------+----------------+------------+
-| department | No.of Students | AVG(maths) |
-+------------+----------------+------------+
-| CSE        |              3 |    66.0000 |
-| IT         |              2 |    67.5000 |
-| ECE        |              1 |    91.0000 |
-+------------+----------------+------------+
-3 rows in set (0.00 sec)
+mysql> SELECT COUNT(salary)
+    -> FROM employee
+    -> WHERE salary < 50000;
++---------------+
+| COUNT(salary) |
++---------------+
+|             2 |
++---------------+
+1 row in set (0.00 sec)
 
-mysql> SELECT count(studentNO) AS 'NO.of Students'
-    -> FROM student
-    -> WHERE physics BETWEEN 70 AND 80;
-+----------------+
-| NO.of Students |
-+----------------+
-|              3 |
-+----------------+
-1 row in set (0.01 sec)
+mysql> SELECT *
+    -> FROM employee
+    -> WHERE salary =
+    ->     (SELECT MAX(salary)
+    ->      FROM employee);
++-------+---------+------------+--------+------+
+| empNo | empName | empAddress | salary | dept |
++-------+---------+------------+--------+------+
+|  2005 | Rani    | Calicut    |  70000 | HR   |
++-------+---------+------------+--------+------+
+1 row in set (0.00 sec)
 
-mysql> ALTER TABLE student
-    -> DROP PRIMARY KEY;
-Query OK, 6 rows affected (0.05 sec)
-Records: 6  Duplicates: 0  Warnings: 0
+mysql> ALTER TABLE employee
+    -> ADD column (title VARCHAR(25) DEFAULT ('junior software engineer'));
+Query OK, 5 rows affected (0.05 sec)
+Records: 5  Duplicates: 0  Warnings: 0
 
-mysql> DESC student;
-+--------------+-------------+------+-----+---------+-------+
-| Field        | Type        | Null | Key | Default | Extra |
-+--------------+-------------+------+-----+---------+-------+
-| studentNo    | int         | NO   |     | NULL    |       |
-| studentName  | varchar(50) | YES  |     | NULL    |       |
-| maths        | int         | YES  |     | NULL    |       |
-| physics      | int         | YES  |     | NULL    |       |
-| chemistry    | int         | YES  |     | NULL    |       |
-| cProgramming | int         | YES  |     | NULL    |       |
-| department   | varchar(10) | YES  |     | NULL    |       |
-| address      | varchar(50) | YES  |     | NULL    |       |
-+--------------+-------------+------+-----+---------+-------+
-8 rows in set (0.00 sec)
+mysql> SELECT *
+    -> FROM employee;
++-------+---------+------------+--------+--------------+--------------------------+
+| empNo | empName | empAddress | salary | dept         | title                    |
++-------+---------+------------+--------+--------------+--------------------------+
+|  2001 | Hari    | Palakkad   |  30000 | Reasearch    | junior software engineer |
+|  2002 | Devi    | Kasaragod  |  40000 | Network      | junior software engineer |
+|  2003 | Gupta   | Kannur     |  50000 | System Admin | junior software engineer |
+|  2004 | Ravi    | Calicut    |  60000 | HR           | junior software engineer |
+|  2005 | Rani    | Calicut    |  70000 | HR           | junior software engineer |
++-------+---------+------------+--------+--------------+--------------------------+
+5 rows in set (0.00 sec)
 
-mysql> ALTER TABLE student
-    -> ADD PRIMARY KEY (studentNO,
-    ->                 studentName);
-Query OK, 0 rows affected (0.03 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+mysql> UPDATE employee
+    -> SET title = 'senior software engineer'
+    -> WHERE empNo = 2004;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
-mysql> DESC student;
-+--------------+-------------+------+-----+---------+-------+
-| Field        | Type        | Null | Key | Default | Extra |
-+--------------+-------------+------+-----+---------+-------+
-| studentNo    | int         | NO   | PRI | NULL    |       |
-| studentName  | varchar(50) | NO   | PRI | NULL    |       |
-| maths        | int         | YES  |     | NULL    |       |
-| physics      | int         | YES  |     | NULL    |       |
-| chemistry    | int         | YES  |     | NULL    |       |
-| cProgramming | int         | YES  |     | NULL    |       |
-| department   | varchar(10) | YES  |     | NULL    |       |
-| address      | varchar(50) | YES  |     | NULL    |       |
-+--------------+-------------+------+-----+---------+-------+
-8 rows in set (0.00 sec)
+mysql> SELECT *
+    -> FROM employee;
++-------+---------+------------+--------+--------------+--------------------------+
+| empNo | empName | empAddress | salary | dept         | title                    |
++-------+---------+------------+--------+--------------+--------------------------+
+|  2001 | Hari    | Palakkad   |  30000 | Reasearch    | junior software engineer |
+|  2002 | Devi    | Kasaragod  |  40000 | Network      | junior software engineer |
+|  2003 | Gupta   | Kannur     |  50000 | System Admin | junior software engineer |
+|  2004 | Ravi    | Calicut    |  60000 | HR           | senior software engineer |
+|  2005 | Rani    | Calicut    |  70000 | HR           | junior software engineer |
++-------+---------+------------+--------+--------------+--------------------------+
+5 rows in set (0.00 sec)
 
-mysql> INSERT INTO student
-    -> VALUES (100, 'Sam', 100, 100, 100, 0, 'CSE', 'Thrissur');
+mysql> DELETE
+    -> FROM employee
+    -> WHERE empNo = 2005;
 Query OK, 1 row affected (0.01 sec)
 
 mysql> SELECT *
-    -> FROM student;
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-| studentNo | studentName | maths | physics | chemistry | cProgramming | department | address   |
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-|       100 | Hari        |    50 |      60 |        45 |           75 | CSE        | Kasaragod |
-|       100 | Sam         |   100 |     100 |       100 |            0 | CSE        | Thrissur  |
-|       101 | Devi        |    60 |      55 |        78 |           40 | CSE        | Kasaragod |
-|       102 | Sam         |    45 |      77 |        88 |           45 | IT         | Kannur    |
-|       103 | Sreehari    |    90 |      75 |        77 |           60 | IT         | Calicut   |
-|       104 | Rani        |    91 |      98 |        89 |           52 | ECE        | Kannur    |
-|       105 | Raj         |    88 |      77 |        67 |           48 | CSE        | Palakkad  |
-+-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-7 rows in set (0.00 sec)
+    -> FROM employee;
++-------+---------+------------+--------+--------------+--------------------------+
+| empNo | empName | empAddress | salary | dept         | title                    |
++-------+---------+------------+--------+--------------+--------------------------+
+|  2001 | Hari    | Palakkad   |  30000 | Reasearch    | junior software engineer |
+|  2002 | Devi    | Kasaragod  |  40000 | Network      | junior software engineer |
+|  2003 | Gupta   | Kannur     |  50000 | System Admin | junior software engineer |
+|  2004 | Ravi    | Calicut    |  60000 | HR           | senior software engineer |
++-------+---------+------------+--------+--------------+--------------------------+
+4 rows in set (0.00 sec)

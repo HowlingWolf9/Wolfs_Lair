@@ -1,86 +1,61 @@
-CREATE TABLE student(studentNo INT PRIMARY KEY,
-                    studentName VARCHAR(50),
-                    maths INT, 
-                    physics INT, 
-                    chemistry INT, 
-                    cProgramming INT, 
-                    department VARCHAR(10),
-                    address VARCHAR(50));
+CREATE TABLE employee   (empNo INT PRIMARY KEY, 
+                        empName VARCHAR(25),
+                        empAddress VARCHAR(50),
+                        salary INT, dept VARCHAR(20));
 
 
-DESC student;
+DESC employee;
 
 
-INSERT INTO student
-VALUES (100, 'Hari', 50, 60, 45, 75, 'CSE', 'Kasaragod'),
-       (101, 'Devi', 60, 55, 78, 40, 'CSE', 'Kasaragod'),
-       (102, 'Sam', 45, 77, 88, 45, 'IT', 'Kannur'),
-       (103, 'Sreehari', 90, 75, 77, 60, 'IT', 'Calicut'),
-       (104, 'Rani', 91, 98, 89, 52, 'ECE', 'Kannur'),
-       (105, 'Raj', 88, 77, 67, 48, 'CSE', 'Palakkad');
+INSERT INTO employee
+VALUES (2001, 'Hari', 'Palakkad', 30000, 'Reasearch'),
+       (2002, 'Devi', 'Kasaragod', 40000, 'Network'), 
+       (2003, 'Gupta', 'Kannur', 50000, 'System Admin'),
+       (2004, 'Ravi', 'Calicut', 60000, 'HR'),
+       (2005, 'Rani', 'Calicut', 70000, 'HR');
 
 
 SELECT *
-FROM student;
+FROM employee;
 
 
-SELECT studentNO,
-       studentName
-FROM student
-WHERE cProgramming < 50
-ORDER BY cProgramming ASC;
+SELECT SUM(salary)
+FROM employee;
 
 
-SELECT studentNO,
-       studentName,
-       department
-FROM student
-ORDER BY department DESC,
-         studentName ASC;
-
-
-SELECT studentName
-FROM student
-WHERE studentName LIKE 'S%';
-
-
-SELECT studentName
-FROM student
-ORDER BY cProgramming DESC
-LIMIT 1
-OFFSET 1;
-
-
-SELECT department,
-       COUNT(department) AS 'No.of Students',
-       AVG(maths)
-FROM student
-GROUP BY department;
-
-
-SELECT count(studentNO) AS 'NO.of Students'
-FROM student
-WHERE physics BETWEEN 70 AND 80;
-
-
-ALTER TABLE student
-DROP PRIMARY KEY;
-
-
-DESC student;
-
-
-ALTER TABLE student 
-ADD PRIMARY KEY (studentNO,
-                studentName);
-
-
-DESC student;
-
-
-INSERT INTO student
-VALUES (100, 'Sam', 100, 100, 100, 0, 'CSE', 'Thrissur');
+SELECT COUNT(salary)
+FROM employee
+WHERE salary < 50000;
 
 
 SELECT *
-FROM student;
+FROM employee
+WHERE salary =
+    (SELECT MAX(salary)
+     FROM employee);
+
+
+ALTER TABLE employee 
+ADD column (title VARCHAR(25) DEFAULT ('junior software engineer'));
+
+
+SELECT *
+FROM employee;
+
+
+UPDATE employee
+SET title = 'senior software engineer'
+WHERE empNo = 2004;
+
+
+SELECT *
+FROM employee;
+
+
+DELETE
+FROM employee
+WHERE empNo = 2005;
+
+
+SELECT *
+FROM employee;
