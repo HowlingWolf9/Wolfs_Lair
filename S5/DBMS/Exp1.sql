@@ -7,6 +7,7 @@ CREATE TABLE student(studentNo INT PRIMARY KEY,
                     department VARCHAR(10),
                     address VARCHAR(50));
 
+
 DESC student;
 
 
@@ -65,12 +66,14 @@ WHERE physics BETWEEN 70 AND 80;
 ALTER TABLE student
 DROP PRIMARY KEY;
 
+
 DESC student;
 
 
 ALTER TABLE student 
 ADD PRIMARY KEY (studentNO,
                 studentName);
+
 
 DESC student;
 
