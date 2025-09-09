@@ -1,49 +1,52 @@
-// main.c
 #include <stdio.h>
 #include "sequential.h"
 #include "linked.h"
 #include "indexed.h"
 
 int main() {
-    int choice, method;
-    char filename;
-    int size;
+    int ch, mthd;
+    char fname;
+    int sz;
 
-    init_sequential();
-    init_linked();
-    init_indexed();
+    printf("\n1. Sequential\n2. Linked\n3. Indexed\nChoose method: ");
+    scanf("%d", &mthd);
+
+    if (mthd == 1) init_sequential();
+    else if (mthd == 2) init_linked();
+    else if (mthd == 3) init_indexed();
+    else {
+        printf("Invalid method chosen\n");
+        return 1;
+    }
 
     while (1) {
         printf("\nFile Allocation Menu\n");
         printf("1. Create File\n2. Delete File\n3. Display\n4. Exit\n");
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        scanf("%d", &ch);
 
-        if (choice == 4) break;
+        if (ch == 4) break;
 
-        printf("Choose method:\n1. Sequential\n2. Linked\n3. Indexed\n");
-        scanf("%d", &method);
-
-        switch (choice) {
+        switch (ch) {
             case 1:
                 printf("Enter filename (A-Z): ");
-                scanf(" %c", &filename);
+                scanf(" %c", &fname);
                 printf("Enter file size (blocks): ");
-                scanf("%d", &size);
-                if (method == 1) create_file_sequential(filename, size);
-                else if (method == 2) create_file_linked(filename, size);
-                else create_file_indexed(filename, size);
+                scanf("%d", &sz);
+                if (mthd == 1) create_file_sequential(fname, sz);
+                else if (mthd == 2) create_file_linked(fname, sz);
+                else create_file_indexed(fname, sz);
                 break;
             case 2:
                 printf("Enter filename (A-Z): ");
-                scanf(" %c", &filename);
-                if (method == 1) delete_file_sequential(filename);
-                else if (method == 2) delete_file_linked(filename);
-                else delete_file_indexed(filename);
+                scanf(" %c", &fname);
+                if (mthd == 1) delete_file_sequential(fname);
+                else if (mthd == 2) delete_file_linked(fname);
+                else delete_file_indexed(fname);
                 break;
             case 3:
-                if (method == 1) display_sequential();
-                else if (method == 2) display_linked();
+                if (mthd == 1) display_sequential();
+                else if (mthd == 2) display_linked();
                 else display_indexed();
                 break;
             default:
