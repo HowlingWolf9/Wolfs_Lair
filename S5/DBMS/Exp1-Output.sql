@@ -1,8 +1,9 @@
-mysql> CREATE TABLE employee   (empNo INT PRIMARY KEY,
-    ->                         empName VARCHAR(25),
-    ->                         empAddress VARCHAR(50),
-    ->                         salary INT, dept VARCHAR(20));
-Query OK, 0 rows affected (0.03 sec)
+mysql> CREATE TABLE employee (
+    ->     empNo INT PRIMARY KEY, 
+    ->     empName VARCHAR(25),
+    ->     empAddress VARCHAR(50),
+    ->     salary INT, dept VARCHAR(20)
+    -> );
 
 mysql> DESC employee;
 +------------+-------------+------+-----+---------+-------+
@@ -17,12 +18,13 @@ mysql> DESC employee;
 5 rows in set (0.01 sec)
 
 mysql> INSERT INTO employee
-    -> VALUES (2001, 'Hari', 'Palakkad', 30000, 'Reasearch'),
-    ->        (2002, 'Devi', 'Kasaragod', 40000, 'Network'),
-    ->        (2003, 'Gupta', 'Kannur', 50000, 'System Admin'),
-    ->        (2004, 'Ravi', 'Calicut', 60000, 'HR'),
-    ->        (2005, 'Rani', 'Calicut', 70000, 'HR');
-Query OK, 5 rows affected (0.01 sec)
+    -> VALUES 
+    ->     (2001, 'Hari', 'Palakkad', 30000, 'Reasearch'),
+    ->     (2002, 'Devi', 'Kasaragod', 40000, 'Network'), 
+    ->     (2003, 'Gupta', 'Kannur', 50000, 'System Admin'),
+    ->     (2004, 'Ravi', 'Calicut', 60000, 'HR'),
+    ->     (2005, 'Rani', 'Calicut', 70000, 'HR');
+Query OK, 5 rows affected (0.00 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 mysql> SELECT *
@@ -36,7 +38,7 @@ mysql> SELECT *
 |  2004 | Ravi    | Calicut    |  60000 | HR           |
 |  2005 | Rani    | Calicut    |  70000 | HR           |
 +-------+---------+------------+--------+--------------+
-5 rows in set (0.01 sec)
+5 rows in set (0.00 sec)
 
 mysql> SELECT SUM(salary)
     -> FROM employee;
@@ -59,9 +61,10 @@ mysql> SELECT COUNT(salary)
 
 mysql> SELECT *
     -> FROM employee
-    -> WHERE salary =
-    ->     (SELECT MAX(salary)
-    ->      FROM employee);
+    -> WHERE salary = (
+    ->     SELECT MAX(salary)
+    ->     FROM employee
+    -> );
 +-------+---------+------------+--------+------+
 | empNo | empName | empAddress | salary | dept |
 +-------+---------+------------+--------+------+
@@ -69,9 +72,9 @@ mysql> SELECT *
 +-------+---------+------------+--------+------+
 1 row in set (0.00 sec)
 
-mysql> ALTER TABLE employee
+mysql> ALTER TABLE employee 
     -> ADD column (title VARCHAR(25) DEFAULT ('junior software engineer'));
-Query OK, 5 rows affected (0.05 sec)
+Query OK, 5 rows affected (0.03 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 mysql> SELECT *
@@ -109,7 +112,7 @@ mysql> SELECT *
 mysql> DELETE
     -> FROM employee
     -> WHERE empNo = 2005;
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 
 mysql> SELECT *
     -> FROM employee;
