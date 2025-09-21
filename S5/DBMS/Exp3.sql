@@ -1,7 +1,8 @@
 CREATE TABLE file_server (
     user_id INT,
     file_name VARCHAR(100),
-    create_date DATE
+    create_date DATE,
+     PRIMARY KEY(user_id, file_name)
 );
 
 DESC file_server;

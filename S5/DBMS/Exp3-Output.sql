@@ -1,7 +1,8 @@
 mysql> CREATE TABLE file_server (
     ->     user_id INT,
     ->     file_name VARCHAR(100),
-    ->     create_date DATE
+    ->     create_date DATE,
+    ->      PRIMARY KEY(user_id, file_name)
     -> );
 Query OK, 0 rows affected (0.02 sec)
 
@@ -9,8 +10,8 @@ mysql> DESC file_server;
 +-------------+--------------+------+-----+---------+-------+
 | Field       | Type         | Null | Key | Default | Extra |
 +-------------+--------------+------+-----+---------+-------+
-| user_id     | int          | YES  |     | NULL    |       |
-| file_name   | varchar(100) | YES  |     | NULL    |       |
+| user_id     | int          | NO   | PRI | NULL    |       |
+| file_name   | varchar(100) | NO   | PRI | NULL    |       |
 | create_date | date         | YES  |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 3 rows in set (0.01 sec)
@@ -63,7 +64,7 @@ mysql> SELECT DISTINCT SUBSTRING_INDEX(file_name,'.',-1)
 | c                 |
 | asm               |
 +-------------------+
-4 rows in set (0.01 sec)
+4 rows in set (0.00 sec)
 
 mysql> SELECT 
     ->     user_id,
@@ -85,7 +86,7 @@ mysql> SELECT
 |       3 | java      |          1 |
 |       4 | TXT       |          2 |
 +---------+-----------+------------+
-8 rows in set (0.00 sec)
+8 rows in set (0.01 sec)
 
 mysql> SELECT * 
     -> FROM file_server
