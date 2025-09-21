@@ -213,25 +213,6 @@ mysql> UPDATE emp
 Query OK, 2 rows affected (0.01 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
-mysql> SELECT
-    ->     empid,
-    ->     empName,
-    ->     salary,
-    ->     deptName
-    -> FROM
-    ->     emp e,
-    ->     dept d
-    -> WHERE e.deptno=d.deptno;
-+-------+---------+--------+-----------+
-| empid | empName | salary | deptName  |
-+-------+---------+--------+-----------+
-|  2002 | Devi    |  40000 | Marketing |
-|  2003 | Gupta   |  60000 | Sales     |
-|  2004 | Ravi    |  60000 | Testing   |
-|  2006 | John    |  48000 | Sales     |
-+-------+---------+--------+-----------+
-4 rows in set (0.00 sec)
-
 mysql> SELECT *
     -> FROM emp;
 +-------+---------+--------+--------+
