@@ -13,9 +13,8 @@ struct process {
 
 void fcfs(struct process p[], int n) {
     int time = 0;
-    float ttat = 0;
-    float twt = 0;
-
+    float total_tat = 0;
+    float total_wt = 0;
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (p[j].at > p[j + 1].at) {
@@ -25,7 +24,6 @@ void fcfs(struct process p[], int n) {
             }
         }
     }
-
     for (int i = 0; i < n; i++) {
         if (time < p[i].at) {
             time = p[i].at;
@@ -34,10 +32,9 @@ void fcfs(struct process p[], int n) {
         p[i].tat = p[i].ct - p[i].at;
         p[i].wt = p[i].tat - p[i].bt;
         time = p[i].ct;
-        ttat += p[i].tat;
-        twt += p[i].wt;
+        total_tat += p[i].tat;
+        total_wt += p[i].wt;
     }
-
     printf("\nFCFS Scheduling:\n");
     printf("+-----+----+----+----+-----+----+\n");
     printf("| PID | AT | BT | CT | TAT | WT |\n");
@@ -46,41 +43,36 @@ void fcfs(struct process p[], int n) {
         printf("| %3d | %2d | %2d | %2d | %3d | %2d |\n", p[i].pid, p[i].at, p[i].bt, p[i].ct, p[i].tat, p[i].wt);
     }
     printf("+-----+----+----+----+-----+----+\n");
-    printf("Average Turnaround Time: %.2f\n", ttat / n);
-    printf("Average Waiting Time: %.2f\n", twt / n);
+    printf("Average Turnaround Time: %.2f\n", total_tat / n);
+    printf("Average Waiting Time: %.2f\n", total_wt / n);
 }
 
 void sjf(struct process p[], int n) {
-    int time = 0;
-    int comp = 0;
-    float ttat = 0;
-    float twt = 0;
-    int sh;
-
+    int time = 0, comp = 0;
+    float total_tat = 0, total_wt = 0;
     while (comp != n) {
-        sh = -1;
+        int shortest_job_idx = -1;
+        int shortest_burst = 99999;
         for (int i = 0; i < n; i++) {
-            if (p[i].at <= time && p[i].rt > 0) {
-                if (sh == -1 || p[i].bt < p[sh].bt) {
-                    sh = i;
-                }
+            if (p[i].at <= time && p[i].rt > 0 && p[i].bt < shortest_burst) {
+                shortest_burst = p[i].bt;
+                shortest_job_idx = i;
             }
         }
-
-        if (sh == -1) {
+        if (shortest_job_idx == -1) {
             time++;
         } else {
-            time += p[sh].bt;
-            p[sh].ct = time;
-            p[sh].tat = p[sh].ct - p[sh].at;
-            p[sh].wt = p[sh].tat - p[sh].bt;
-            p[sh].rt = 0;
+            int idx = shortest_job_idx;
+            time += p[idx].bt;
+            p[idx].ct = time;
+            p[idx].tat = p[idx].ct - p[idx].at;
+            p[idx].wt = p[idx].tat - p[idx].bt;
+            p[idx].rt = 0;
             comp++;
-            ttat += p[sh].tat;
-            twt += p[sh].wt;
+            total_tat += p[idx].tat;
+            total_wt += p[idx].wt;
         }
     }
-
     printf("\nSJF (Non-Preemptive) Scheduling:\n");
     printf("+-----+----+----+----+-----+----+\n");
     printf("| PID | AT | BT | CT | TAT | WT |\n");
@@ -89,71 +81,54 @@ void sjf(struct process p[], int n) {
         printf("| %3d | %2d | %2d | %2d | %3d | %2d |\n", p[i].pid, p[i].at, p[i].bt, p[i].ct, p[i].tat, p[i].wt);
     }
     printf("+-----+----+----+----+-----+----+\n");
-    printf("Average Turnaround Time: %.2f\n", ttat / n);
-    printf("Average Waiting Time: %.2f\n", twt / n);
+    printf("Average Turnaround Time: %.2f\n", total_tat / n);
+    printf("Average Waiting Time: %.2f\n", total_wt / n);
 }
 
 void rr(struct process p[], int n, int q) {
-    int time = 0;
-    int comp = 0;
-    float ttat = 0;
-    float twt = 0;
-    int queue[100], front = -1, rear = -1;
-    int in_queue[100] = {0};
-
-    for (int i = 0; i < n; i++) {
-        p[i].rt = p[i].bt;
+    int time = 0, comp = 0;
+    float total_tat = 0, total_wt = 0;
+    int queue[100], front = 0, rear = 0;
+    int is_in_queue[100] = {0};
+    int min_at = 9999;
+    for(int i=0; i<n; i++) {
+        if(p[i].at < min_at) {
+            min_at = p[i].at;
+        }
     }
-
-    while (comp != n) {
+    time = min_at;
+    while(comp < n) {
         for (int i = 0; i < n; i++) {
-            if (p[i].at <= time && p[i].rt > 0 && !in_queue[i]) {
-                if (front == -1) front = 0;
-                rear = (rear + 1) % 100;
-                queue[rear] = i;
-                in_queue[i] = 1;
+            if (p[i].at <= time && p[i].rt > 0 && !is_in_queue[i]) {
+                queue[rear++] = i;
+                is_in_queue[i] = 1;
             }
         }
-
-        if (front == -1) {
+        if (front == rear) {
             time++;
+            continue;
+        }
+        int cpi = queue[front++];
+        int run_time = (p[cpi].rt <= q) ? p[cpi].rt : q;
+        time += run_time;
+        p[cpi].rt -= run_time;
+        for (int i = 0; i < n; i++) {
+            if (p[i].at <= time && p[i].rt > 0 && !is_in_queue[i]) {
+                queue[rear++] = i;
+                is_in_queue[i] = 1;
+            }
+        }
+        if (p[cpi].rt == 0) {
+            comp++;
+            p[cpi].ct = time;
+            p[cpi].tat = p[cpi].ct - p[cpi].at;
+            p[cpi].wt = p[cpi].tat - p[cpi].bt;
+            total_tat += p[cpi].tat;
+            total_wt += p[cpi].wt;
         } else {
-            int cpi = queue[front];
-            if (front == rear) {
-                front = rear = -1;
-            } else {
-                front = (front + 1) % 100;
-            }
-            in_queue[cpi] = 0;
-
-            if (p[cpi].rt <= q) {
-                time += p[cpi].rt;
-                p[cpi].rt = 0;
-                p[cpi].ct = time;
-                p[cpi].tat = p[cpi].ct - p[cpi].at;
-                p[cpi].wt = p[cpi].tat - p[cpi].bt;
-                comp++;
-                ttat += p[cpi].tat;
-                twt += p[cpi].wt;
-            } else {
-                time += q;
-                p[cpi].rt -= q;
-                for (int i = 0; i < n; i++) {
-                    if (p[i].at <= time && p[i].rt > 0 && !in_queue[i]) {
-                         if (front == -1) front = 0;
-                         rear = (rear + 1) % 100;
-                         queue[rear] = i;
-                         in_queue[i] = 1;
-                    }
-                }
-                if (front == -1) front = 0;
-                rear = (rear + 1) % 100;
-                queue[rear] = cpi;
-                in_queue[cpi] = 1;
-            }
+            queue[rear++] = cpi;
         }
     }
-
     printf("\nRound Robin Scheduling (Quantum: %d):\n", q);
     printf("+-----+----+----+----+-----+----+\n");
     printf("| PID | AT | BT | CT | TAT | WT |\n");
@@ -162,41 +137,36 @@ void rr(struct process p[], int n, int q) {
         printf("| %3d | %2d | %2d | %2d | %3d | %2d |\n", p[i].pid, p[i].at, p[i].bt, p[i].ct, p[i].tat, p[i].wt);
     }
     printf("+-----+----+----+----+-----+----+\n");
-    printf("Average Turnaround Time: %.2f\n", ttat / n);
-    printf("Average Waiting Time: %.2f\n", twt / n);
+    printf("Average Turnaround Time: %.2f\n", total_tat / n);
+    printf("Average Waiting Time: %.2f\n", total_wt / n);
 }
 
 void ps(struct process p[], int n) {
-    int time = 0;
-    int comp = 0;
-    float ttat = 0;
-    float twt = 0;
-    int hp;
-
+    int time = 0, comp = 0;
+    float total_tat = 0, total_wt = 0;
     while (comp != n) {
-        hp = -1;
+        int highest_pty_idx = -1;
+        int highest_pty = 99999;
         for (int i = 0; i < n; i++) {
-            if (p[i].at <= time && p[i].rt > 0) {
-                if (hp == -1 || p[i].pty < p[hp].pty) {
-                    hp = i;
-                }
+            if (p[i].at <= time && p[i].rt > 0 && p[i].pty < highest_pty) {
+                highest_pty = p[i].pty;
+                highest_pty_idx = i;
             }
         }
-
-        if (hp == -1) {
+        if (highest_pty_idx == -1) {
             time++;
         } else {
-            time += p[hp].bt;
-            p[hp].ct = time;
-            p[hp].tat = p[hp].ct - p[hp].at;
-            p[hp].wt = p[hp].tat - p[hp].bt;
-            p[hp].rt = 0;
+            int idx = highest_pty_idx;
+            time += p[idx].bt;
+            p[idx].ct = time;
+            p[idx].tat = p[idx].ct - p[idx].at;
+            p[idx].wt = p[idx].tat - p[idx].bt;
+            p[idx].rt = 0;
             comp++;
-            ttat += p[hp].tat;
-            twt += p[hp].wt;
+            total_tat += p[idx].tat;
+            total_wt += p[idx].wt;
         }
     }
-
     printf("\nPriority (Non-Preemptive) Scheduling:\n");
     printf("+-----+----+----+----------+----+-----+----+\n");
     printf("| PID | AT | BT | Priority | CT | TAT | WT |\n");
@@ -205,18 +175,15 @@ void ps(struct process p[], int n) {
         printf("| %3d | %2d | %2d | %8d | %2d | %3d | %2d |\n", p[i].pid, p[i].at, p[i].bt, p[i].pty, p[i].ct, p[i].tat, p[i].wt);
     }
     printf("+-----+----+----+----------+----+-----+----+\n");
-    printf("Average Turnaround Time: %.2f\n", ttat / n);
-    printf("Average Waiting Time: %.2f\n", twt / n);
+    printf("Average Turnaround Time: %.2f\n", total_tat / n);
+    printf("Average Waiting Time: %.2f\n", total_wt / n);
 }
-
 
 int main() {
     int n, choice, q;
     struct process p[100], pc[100];
-
     printf("Enter the number of processes: ");
     scanf("%d", &n);
-
     for (int i = 0; i < n; i++) {
         p[i].pid = i + 1;
         printf("Enter arrival time for process %d: ", i + 1);
@@ -225,14 +192,15 @@ int main() {
         scanf("%d", &p[i].bt);
         printf("Enter priority for process %d: ", i + 1);
         scanf("%d", &p[i].pty);
-        p[i].rt = p[i].bt;
     }
-
-    for (int i = 0; i < n; i++) {
-        pc[i] = p[i];
-    }
-
     do {
+        for (int i = 0; i < n; i++) {
+            pc[i] = p[i];
+            pc[i].rt = pc[i].bt;
+            pc[i].ct = 0;
+            pc[i].tat = 0;
+            pc[i].wt = 0;
+        }
         printf("\nCPU Scheduling Algorithms:\n");
         printf("1. FCFS\n");
         printf("2. SJF (Non-Preemptive)\n");
@@ -241,25 +209,20 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
-        for (int i = 0; i < n; i++) {
-            p[i] = pc[i];
-        }
-
         switch (choice) {
             case 1:
-                fcfs(p, n);
+                fcfs(pc, n);
                 break;
             case 2:
-                sjf(p, n);
+                sjf(pc, n);
                 break;
             case 3:
                 printf("Enter time quantum for Round Robin: ");
                 scanf("%d", &q);
-                rr(p, n, q);
+                rr(pc, n, q);
                 break;
             case 4:
-                ps(p, n);
+                ps(pc, n);
                 break;
             case 5:
                 printf("Exiting...\n");
@@ -268,6 +231,5 @@ int main() {
                 printf("Invalid choice!\n");
         }
     } while (choice != 5);
-
     return 0;
 }
