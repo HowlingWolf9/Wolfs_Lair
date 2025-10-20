@@ -1,0 +1,16 @@
+{
+  // Disable snippet suggestions and snippet completions in the editor
+  "editor.suggest.showSnippets": false,
+  "editor.snippetSuggestions": "none",
+
+  // Apply to SQL language specifically (covers .sql files and many SQL extensions)
+  "[sql]": {
+    "editor.suggest.showSnippets": false,
+    "editor.snippetSuggestions": "none"
+  },
+
+  // If you use the MySQL extension or other SQL language servers that provide snippets,
+  // these extension-specific settings may help (try enabling if the above isn't enough)
+  "sql.suggest.snippetsEnabled": false,
+  "mysql.editor.snippetSuggestions": "none"
+}
