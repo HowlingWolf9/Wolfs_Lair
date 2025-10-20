@@ -1,12 +1,13 @@
-mysql> CREATE TABLE student(studentNo INT PRIMARY KEY,
-    ->                     studentName VARCHAR(50),
-    ->                     maths INT,
-    ->                     physics INT,
-    ->                     chemistry INT,
-    ->                     cProgramming INT,
-    ->                     department VARCHAR(10),
-    ->                     address VARCHAR(50));
-Query OK, 0 rows affected (0.02 sec)
+mysql> CREATE TABLE student (
+    ->     studentNo INT PRIMARY KEY,
+    ->     studentName VARCHAR(50),
+    ->     maths INT, 
+    ->     physics INT, 
+    ->     chemistry INT, 
+    ->     cProgramming INT, 
+    ->     department VARCHAR(10),
+    ->     address VARCHAR(50)
+    -> );
 
 mysql> DESC student;
 +--------------+-------------+------+-----+---------+-------+
@@ -21,16 +22,16 @@ mysql> DESC student;
 | department   | varchar(10) | YES  |     | NULL    |       |
 | address      | varchar(50) | YES  |     | NULL    |       |
 +--------------+-------------+------+-----+---------+-------+
-8 rows in set (0.01 sec)
+8 rows in set (0.00 sec)
 
 mysql> INSERT INTO student
-    -> VALUES (100, 'Hari', 50, 60, 45, 75, 'CSE', 'Kasaragod'),
-    ->        (101, 'Devi', 60, 55, 78, 40, 'CSE', 'Kasaragod'),
-    ->        (102, 'Sam', 45, 77, 88, 45, 'IT', 'Kannur'),
-    ->        (103, 'Sreehari', 90, 75, 77, 60, 'IT', 'Calicut'),
-    ->        (104, 'Rani', 91, 98, 89, 52, 'ECE', 'Kannur'),
-    ->        (105, 'Raj', 88, 77, 67, 48, 'CSE', 'Palakkad');
-Query OK, 6 rows affected (0.01 sec)
+    -> VALUES 
+    ->     (100, 'Hari', 50, 60, 45, 75, 'CSE', 'Kasaragod'),
+    ->     (101, 'Devi', 60, 55, 78, 40, 'CSE', 'Kasaragod'),
+    ->     (102, 'Sam', 45, 77, 88, 45, 'IT', 'Kannur'),
+    ->     (103, 'Sreehari', 90, 75, 77, 60, 'IT', 'Calicut'),
+    ->     (104, 'Rani', 91, 98, 89, 52, 'ECE', 'Kannur'),
+    ->     (105, 'Raj', 88, 77, 67, 48, 'CSE', 'Palakkad');
 Records: 6  Duplicates: 0  Warnings: 0
 
 mysql> SELECT *
@@ -45,15 +46,16 @@ mysql> SELECT *
 |       104 | Rani        |    91 |      98 |        89 |           52 | ECE        | Kannur    |
 |       105 | Raj         |    88 |      77 |        67 |           48 | CSE        | Palakkad  |
 +-----------+-------------+-------+---------+-----------+--------------+------------+-----------+
-6 rows in set (0.01 sec)
+6 rows in set (0.00 sec)
 
-mysql> SELECT studentNO,
-    ->        studentName
+mysql> SELECT 
+    ->     studentNo,
+    ->     studentName
     -> FROM student
     -> WHERE cProgramming < 50
     -> ORDER BY cProgramming ASC;
 +-----------+-------------+
-| studentNO | studentName |
+| studentNo | studentName |
 +-----------+-------------+
 |       101 | Devi        |
 |       102 | Sam         |
@@ -61,14 +63,16 @@ mysql> SELECT studentNO,
 +-----------+-------------+
 3 rows in set (0.00 sec)
 
-mysql> SELECT studentNO,
-    ->        studentName,
-    ->        department
+mysql> SELECT 
+    ->     studentNo,
+    ->     studentName,
+    ->     department
     -> FROM student
-    -> ORDER BY department DESC,
-    ->          studentName ASC;
+    -> ORDER BY 
+    ->     department DESC,
+    ->     studentName ASC;
 +-----------+-------------+------------+
-| studentNO | studentName | department |
+| studentNo | studentName | department |
 +-----------+-------------+------------+
 |       102 | Sam         | IT         |
 |       103 | Sreehari    | IT         |
@@ -102,33 +106,33 @@ mysql> SELECT studentName
 +-------------+
 1 row in set (0.00 sec)
 
-mysql> SELECT department,
-    ->        COUNT(department) AS 'No.of Students',
-    ->        AVG(maths)
+mysql> SELECT 
+    ->     department,
+    ->     COUNT(department) AS student_count,
+    ->     AVG(maths) AS avg_maths_score
     -> FROM student
     -> GROUP BY department;
-+------------+----------------+------------+
-| department | No.of Students | AVG(maths) |
-+------------+----------------+------------+
-| CSE        |              3 |    66.0000 |
-| IT         |              2 |    67.5000 |
-| ECE        |              1 |    91.0000 |
-+------------+----------------+------------+
++------------+---------------+-----------------+
+| department | student_count | avg_maths_score |
++------------+---------------+-----------------+
+| CSE        |             3 |         66.0000 |
+| IT         |             2 |         67.5000 |
+| ECE        |             1 |         91.0000 |
++------------+---------------+-----------------+
 3 rows in set (0.00 sec)
 
-mysql> SELECT count(studentNO) AS 'NO.of Students'
+mysql> SELECT COUNT(studentNo) AS student_count
     -> FROM student
     -> WHERE physics BETWEEN 70 AND 80;
-+----------------+
-| NO.of Students |
-+----------------+
-|              3 |
-+----------------+
-1 row in set (0.01 sec)
++---------------+
+| student_count |
++---------------+
+|             3 |
++---------------+
+1 row in set (0.00 sec)
 
-mysql> ALTER TABLE student
+mysql> ALTER TABLE student 
     -> DROP PRIMARY KEY;
-Query OK, 6 rows affected (0.05 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 mysql> DESC student;
@@ -146,9 +150,8 @@ mysql> DESC student;
 +--------------+-------------+------+-----+---------+-------+
 8 rows in set (0.00 sec)
 
-mysql> ALTER TABLE student
-    -> ADD PRIMARY KEY (studentNO,
-    ->                 studentName);
+mysql> ALTER TABLE student 
+    -> ADD PRIMARY KEY (studentNo, studentName);
 Query OK, 0 rows affected (0.03 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
@@ -169,7 +172,7 @@ mysql> DESC student;
 
 mysql> INSERT INTO student
     -> VALUES (100, 'Sam', 100, 100, 100, 0, 'CSE', 'Thrissur');
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 
 mysql> SELECT *
     -> FROM student;
